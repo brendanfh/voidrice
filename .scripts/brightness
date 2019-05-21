@@ -1,0 +1,6 @@
+#!/bin/sh
+
+br=$(printf '1\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100' | dmenu -fn Monospace:11 -p "Select brightness")
+[ -z "$br" ] && exit 1
+
+xbacklight -set "$br"

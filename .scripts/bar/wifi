@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "IPs:" \
+		"Local: $( ip addr show dev wlp4s0 | grep 'inet ' | awk '{print $2}')\n\
+Remote: $(curl ipv4.icanhazip.com)"
+esac
+
+connection="$(nmcli connection show | awk '/wlp4s0/ {print $1}')"
+[ -z "$connection" ] && printf "<span foreground=\"#4F0000\"> No Wifi</span>" && exit
+
+printf "<span foreground=\"#0d440d\">  %s </span>" "$(nmcli connection show | awk '/wlp4s0/ {print $1}')"

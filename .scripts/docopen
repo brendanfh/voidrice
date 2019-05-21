@@ -1,0 +1,6 @@
+#!/bin/sh
+
+doc=$(find ~/Dropbox -name '*.pdf' | dmenu -i -l 10 -fn Monospace:11 -p "Open which document?")
+[ -z "$doc" ] && exit 0
+
+zathura "$doc"

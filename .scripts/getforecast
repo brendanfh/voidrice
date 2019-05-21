@@ -1,0 +1,5 @@
+#!/bin/sh
+
+curl -s "https://wttr.in/?T" -o /tmp/weatherreport
+pkill -RTMIN+5 i3blocks
+notify-send "Weather Forecast Updated"

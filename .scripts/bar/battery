@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "Battery status: " \
+		"$(acpi)" ;;
+esac
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+stat=$(cat /sys/class/power_supply/"$1"/status) || exit
+
+sym=" "
+
+if [ "$capacity" -ge "90" ]; then
+	sym=""
+elif [ "$capacity" -ge "75" ]; then
+	sym=""
+elif [ "$capacity" -ge "50" ]; then
+	sym=""
+elif [ "$capacity" -ge "25" ]; then
+	sym=" "
+else
+	sym=""
+fi
+
+[ "$stat" = "Charging" ] && sym="⚡"
+
+printf "%s %s%%" "$sym" "$capacity"

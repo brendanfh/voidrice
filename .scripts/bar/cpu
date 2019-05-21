@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "HIGH CPU PROCESSES:" \
+		"$(ps axch -o cmd:15,%cpu --sort=-%cpu | head | xargs printf '%s %s%%\n')" ;;
+
+	3) st htop ;;
+esac
+
+temp="$(sensors "pch_skylake-*" | awk -F'[\:\+°\.]' '/temp1/ {print $3}' 2>/dev/null)"
+
+color="#0d440d"
+if [ "$temp" -gt "50" ]; then
+	color="#4f0000"
+fi
+
+printf "<span foreground=\"%s\">  %s°C </span>" "$color" "$temp"

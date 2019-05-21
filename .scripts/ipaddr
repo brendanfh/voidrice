@@ -1,0 +1,5 @@
+#!/bin/sh
+
+notify-send "IPs:" \
+	"Local: $( ip addr show dev wlp4s0 | grep 'inet ' | awk '{print $2}')\n\
+Remote: $(curl -s ipv4.icanhazip.com)"

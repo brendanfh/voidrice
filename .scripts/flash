@@ -1,0 +1,3 @@
+#!/bin/bash
+
+while [ 1 -ne 2 ] ; do echo $i > brightness ; export i=$(((i + 1) % 3)) ; sleep 0.5 ; done

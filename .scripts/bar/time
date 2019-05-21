@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+esac
+
+printf "<span foreground=\"#202066\"> %s </span>" "$(date '+ %H:%M')"

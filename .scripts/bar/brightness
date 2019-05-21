@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) xbacklight -inc 5 ;;
+	2) ~/.scripts/brightness ;;
+	3) xbacklight -dec 5 ;;
+	4) xbacklight -inc 5 ;;
+	5) xbacklight -dec 5 ;;
+esac
+
+printf "<span foreground=\"#202066\">  %s%% </span>" "$(xbacklight | sed -e 's/\([0-9]\+\)\..*/\1/g')"

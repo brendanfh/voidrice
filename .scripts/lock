@@ -1,0 +1,7 @@
+#!/bin/sh
+ICON=$HOME/.scripts/pictures/lock.png
+TMPBG=/tmp/screen.png
+scrot $TMPBG
+convert $TMPBG -scale 2% -scale 5000% $TMPBG
+convert "$TMPBG" "$ICON" -gravity center -composite -matte $TMPBG
+i3lock -u -c 000000 -i $TMPBG

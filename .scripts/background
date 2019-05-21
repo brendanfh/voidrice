@@ -1,0 +1,14 @@
+#!/bin/sh
+
+wallpaper=$(find ~/Dropbox/Pictures/background | dmenu -i -fn monospace:11 -l 30 -p "Which background?")
+[ -z "$wallpaper" ] && exit 1
+
+# feh --bg-fill /home/brendan/Pictures/background/$wallpaper
+wal -i "/home/brendan/Dropbox/Pictures/background/$wallpaper"
+echo "/home/brendan/Dropbox/Pictures/background/$wallpaper" > ~/.background
+
+# Update i3blocks
+pkill -RTMIN+5 i3blocks
+pkill -RTMIN+9 i3blocks
+pkill -RTMIN+10 i3blocks
+pkill -RTMIN+1 i3blocks
