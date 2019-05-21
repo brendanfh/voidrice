@@ -1,0 +1,12 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "Disk status: " \
+		"$(df -h)" ;;
+esac
+
+dinfo="$(df -h $1 | awk '/[0-9]/ {print $3 " / " $2}')"
+printf "%s %s\n\n" "$2" "$dinfo"
+printf "$color4"

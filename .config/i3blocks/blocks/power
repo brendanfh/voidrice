@@ -1,0 +1,8 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+	1) ~/.scripts/poweroptions ;;
+esac
+
+echo -e '\n'
+echo '#ff0000'

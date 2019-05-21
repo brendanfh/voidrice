@@ -1,0 +1,23 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+numevts=$(calcurse -Q --days 1 | grep '\->' | wc -l)
+
+case $BLOCK_BUTTON in
+	1) if [ "$numevts" -gt "0" ]; then
+			notify-send "Events for today:" \
+				"$(calcurse -Q --days 1)"
+		else
+			notify-send "No events today" "" 
+		fi ;;
+
+	3) st -e calcurse ;;
+esac
+
+color="#666666"
+if [ "$numevts" -gt "0" ]; then
+	color="$color4"
+fi
+
+printf "<span foreground=\"%s\">  %s </span><span foreground=\"$color4\"> %s </span>" "$color" "$numevts" "$(date '+%b %_d %Y')"

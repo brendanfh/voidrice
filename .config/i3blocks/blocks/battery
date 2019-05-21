@@ -1,0 +1,32 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "Battery status: " \
+		"$(acpi)" ;;
+esac
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+stat=$(cat /sys/class/power_supply/"$1"/status) || exit
+
+color="$color4"
+sym=" "
+
+if [ "$capacity" -ge "90" ]; then
+	sym=""
+elif [ "$capacity" -ge "75" ]; then
+	sym=""
+elif [ "$capacity" -ge "50" ]; then
+	sym=""
+elif [ "$capacity" -ge "25" ]; then
+	sym=" "
+else
+	color="#ff0000"
+	sym=""
+fi
+
+[ "$stat" = "Charging" ] && color="#30ef30" && sym="⚡"
+
+printf "%s %s%%\n\n" "$sym" "$capacity"
+printf "$color"

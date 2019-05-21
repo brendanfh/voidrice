@@ -1,0 +1,10 @@
+vrc      ~/.vimrc
+brc 	 ~/.bashrc
+i3c      ~/.config/i3/config
+stc      ~/tools/st/config.h
+nrc		 ~/.config/nvim/init.vim
+i3b      ~/.config/i3blocks/config
+pbc 	 ~/.config/polybar/config
+bmf		 ~/.bmfiles
+bmd		 ~/.bmdirs
+awc		 ~/.config/awesome/rc.lua

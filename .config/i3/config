@@ -1,0 +1,219 @@
+# Global settings
+
+set $mod Mod4
+set_from_resource $bg i3wm.background #1f1f1f
+set_from_resource $fg1 i3wm.color6 #f1f1f1
+set_from_resource $fg2 i3wm.color5 #f1f1f1
+
+# Font settings 
+font pango:FontAwesome Regular 11, pango:Noto Sans Bengali Regular 11
+# font pango:DejaVu Sans Mono 8
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Mouse+$mod -> Drag windows
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# Start rofi for application launching
+bindsym $mod+space exec --no-startup-id rofi -show run
+
+# scratchpad usefulness
+bindsym $mod+Shift+BackSpace move scratchpad
+bindsym $mod+backslash scratchpad show
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Resize windows
+bindsym $mod+u resize shrink width 10 px or 10 ppt
+bindsym $mod+i resize grow height 10 px or 10 ppt
+bindsym $mod+o resize shrink height 10 px or 10 ppt
+bindsym $mod+p resize grow width 10 px or 10 ppt
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+d focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+new_window pixel 2
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "♪"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+shift+o exec --no-startup-id "~/.scripts/scripts"
+bindsym $mod+c exec --no-startup-id "~/.scripts/plumbing"
+bindsym $mod+shift+x exec --no-startup-id "~/.scripts/lock"
+
+# COLORS
+# 				   		  border    background text      indicator   child_border
+# client.focused     		  #4f4f4f   #4f4f4f	   #f4f5f6   #5678ff     #101010
+# client.focused_inactive     #4f4f4f   #4f4f4f    #f4f5f6   #5678ff     #101010
+# client.unfocused   		  #0f0f0f   #0f0f0f    #f4f5f6   #5678ff     #101010
+# client.urgent      		  #e5201e   #e5201e    #000000   #5678ff     #5687ff
+# client.placeholder 		  #2f2f2f   #2f2f2f    #ffffff   #000000     #2f2f2f
+
+# client.focused     		  #005189   #0091d9	   #f4f5f6   #5678ff     #0091d9
+# client.focused_inactive   #005189   #0091d9    #f4f5f6   #5678ff     #0091d9
+# client.unfocused   		  #005189   #40d1ff    #f4f5f6   #5678ff     #0091d9
+# client.urgent      		  #e5201e   #e5201e    #000000   #5678ff     #5687ff
+# client.placeholder 		  #2f2f2f   #2f2f2f    #ffffff   #000000     #2f2f2f
+
+client.background $bg
+
+client.focused $bg $bg $fg #5678ff #101010
+client.focused_inactive $bg $bg $fg #5678ff #101010
+client.unfocused #0f0f0f #0f0f0f $fg #5678ff #101010
+client.urgent #e5201e #e5201e #000000 #5678ff #5678ff
+client.placeholder #2f2f2f #2f2f2f #ffffff #000000 #2f2f2f
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+	output eDP1
+	output DP1-1
+	font "pango:FontAwesome 12"
+	# font "SourceCodePro-Medium 14"
+	status_command i3blocks
+
+	colors {
+		background $bg
+
+		focused_workspace  $fg1 $fg1 #ffffff
+		active_workspace   $fg2 $fg2 #ffffff
+		inactive_workspace #3f3f3f #3f3f3f #ffffff
+		urgent_workspace   #ff0000 #ff0000 #000000
+		binding_mode	   $fg1 $fg1 #ffffff
+	}
+}
+
+bar {
+	position top
+	output DP1-2
+	output HDMI1
+	font "pango:FontAwesome 14"
+
+	colors {
+		background $bg
+
+		focused_workspace  $fg1 $fg1 #ffffff
+		active_workspace   $fg2 $fg2 #ffffff
+		inactive_workspace #3f3f3f #3f3f3f #ffffff
+		urgent_workspace   #ff0000 #ff0000 #000000
+		binding_mode	   $fg1 $fg1 #ffffff
+	}
+}
+
+gaps inner 6
+gaps outer 10
+
+exec_always --no-startup-id feh --bg-fill `cat ~/.background`
+exec_always --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
+exec --no-startup-id dunst
+exec --no-startup-id compton -f
+exec --no-startup-id nm-applet
+
+# For resetting screens if nothing is showing up
+bindsym $mod+Shift+z exec --no-startup-id /home/brendan/.screenlayout/laptop.sh
+
+bindsym $mod+Shift+s exec --no-startup-id bash -c "scrot -s"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 && pkill -RTMIN+9 i3blocks # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 && pkill -RTMIN+9 i3blocks # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+

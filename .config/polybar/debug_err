@@ -1,0 +1,107 @@
+polybar|info:  Loading config: /home/brendan/.config/polybar/config
+polybar|warn:  No monitor specified, using "eDP1"
+polybar|info:  Loaded monitor eDP1 (1920x1080+0+0)
+polybar|info:  Bar geometry: 1920x32+0+0
+polybar|warn:  pulseaudio: using default sink alsa_output.pci-0000_00_1f.3.analog-stereo
+polybar|info:  Starting application
+polybar|info:  Starting module/i3
+polybar|info:  Starting module/spotify
+polybar|info:  Starting module/pulseaudio
+polybar|info:  module/spotify: Invoking shell command: "python $HOME/.scripts/bar/spotify_status.py -f '{artist}: {song}'"
+polybar|info:  Starting module/xbacklight
+polybar|info:  Starting module/temperature
+polybar|info:  Starting module/cpu
+polybar|info:  Starting module/memory
+polybar|info:  Starting module/wifi
+polybar|info:  Starting module/battery
+polybar|info:  Starting module/date
+polybar|info:  module/battery: Invoking shell command: "~/.scripts/bar/battery BAT0"
+polybar|info:  Starting module/time
+polybar|info:  Starting module/powermenu
+polybar|info:  Entering event loop (thread-id=1)
+polybar|info:  module/time: Invoking shell command: "date '+%H:%M'"
+polybar|info:  module/date: Invoking shell command: "$HOME/.scripts/bar/calendar"
+polybar|info:  Eventqueue worker (thread-id=10)
+polybar|info:  Configured DPI = 96x96
+polybar|info:  Loaded font "Source Code Pro,Source Code Pro Medium:style=Medium,Regular:size=14:antialias=true" (name=Source Code Pro, offset=0, file=/usr/share/fonts/OTF/SourceCodePro-Medium.otf)
+polybar|info:  Loaded font "Font Awesome 5 Free Regular:style=Regular:size=14" (name=Font Awesome 5 Free, offset=2, file=/usr/share/fonts/OTF/Font Awesome 5 Free-Regular-400.otf)
+polybar|info:  Loaded font "Inconsolata:size=14:antialias=true:autohint=true" (name=Inconsolata, offset=0, file=/usr/share/fonts/OTF/Inconsolata.otf)
+polybar|info:  Loaded font "siji:size=14:antialias=true" (name=Siji, offset=0, file=/usr/share/fonts/misc/siji.pcf)
+polybar|info:  Bar window: 0x3000002
+polybar|info:  Activating tray manager
+polybar|info:  Tray window: 0x3000006
+polybar|error: tray: Failed to put tray above 0x3000002 in the stack (XCB_MATCH (8))
+polybar|warn:  Systray selection already managed (window=0x1400009)
+polybar|info:  Deactivating tray manager
+polybar|info:  module/i3: Rebuilding cache
+polybar|info:  module/spotify: Rebuilding cache
+polybar|info:  module/pulseaudio: Rebuilding cache
+polybar|info:  module/xbacklight: Rebuilding cache
+polybar|info:  module/temperature: Rebuilding cache
+polybar|info:  module/cpu: Rebuilding cache
+polybar|info:  module/memory: Rebuilding cache
+polybar|info:  module/wifi: Rebuilding cache
+polybar|info:  module/battery: Rebuilding cache
+polybar|info:  module/date: Rebuilding cache
+polybar|info:  module/time: Rebuilding cache
+polybar|info:  module/powermenu: Rebuilding cache
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character 🔇 (U+1f507)
+polybar|warn:  Dropping unmatched character  (U+f2c9)
+polybar|warn:  Dropping unmatched character  (U+f109)
+polybar|warn:  Dropping unmatched character  (U+f2db)
+polybar|warn:  Dropping unmatched character  (U+f1eb)
+polybar|warn:  Dropping unmatched character  (U+f243)
+polybar|warn:  Dropping unmatched character  (U+f011)
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character 🔇 (U+1f507)
+polybar|warn:  Dropping unmatched character  (U+f2c9)
+polybar|warn:  Dropping unmatched character  (U+f109)
+polybar|warn:  Dropping unmatched character  (U+f2db)
+polybar|warn:  Dropping unmatched character  (U+f1eb)
+polybar|warn:  Dropping unmatched character  (U+f243)
+polybar|warn:  Dropping unmatched character  (U+f011)
+polybar|info:  module/temperature: Rebuilding cache
+polybar|info:  module/temperature: Rebuilding cache
+polybar|info:  module/cpu: Rebuilding cache
+polybar|info:  module/memory: Rebuilding cache
+polybar|info:  Redrawing bar window
+polybar|warn:  Dropping unmatched character 🔇 (U+1f507)
+polybar|warn:  Dropping unmatched character  (U+f2c9)
+polybar|warn:  Dropping unmatched character  (U+f109)
+polybar|warn:  Dropping unmatched character  (U+f2db)
+polybar|warn:  Dropping unmatched character  (U+f1eb)
+polybar|warn:  Dropping unmatched character  (U+f243)
+polybar|warn:  Dropping unmatched character  (U+f011)
+polybar|info:  module/temperature: Rebuilding cache
+polybar|info:  module/wifi: Rebuilding cache
+polybar|warn:  Termination signal received, shutting down...
+polybar|info:  module/i3: Disconnecting from socket
+polybar|info:  module/i3: Stopping
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|info:  module/i3: Reconnecting socket succeeded
+polybar|info:  Deconstruction of module/i3 took 0 ms.
+polybar|info:  module/spotify: Stopping
+polybar|info:  Deconstruction of module/spotify took 0 ms.
+polybar|info:  module/pulseaudio: Stopping
+polybar|info:  Deconstruction of module/pulseaudio took 0 ms.
+polybar|info:  module/xbacklight: Stopping
+polybar|info:  Deconstruction of module/xbacklight took 0 ms.
+polybar|info:  module/temperature: Stopping
+polybar|info:  Deconstruction of module/temperature took 0 ms.
+polybar|info:  module/cpu: Stopping
+polybar|info:  Deconstruction of module/cpu took 0 ms.
+polybar|info:  module/memory: Stopping
+polybar|info:  Deconstruction of module/memory took 0 ms.
+polybar|info:  module/wifi: Stopping
+polybar|info:  Deconstruction of module/wifi took 0 ms.
+polybar|info:  module/battery: Stopping
+polybar|info:  Deconstruction of module/battery took 0 ms.
+polybar|info:  module/date: Stopping
+polybar|info:  Deconstruction of module/date took 0 ms.
+polybar|info:  module/time: Stopping
+polybar|info:  Deconstruction of module/time took 0 ms.
+polybar|info:  module/powermenu: Stopping
+polybar|info:  Deconstruction of module/powermenu took 0 ms.
+polybar|info:  Waiting for spawned processes to end
+polybar|info:  Reached end of application...

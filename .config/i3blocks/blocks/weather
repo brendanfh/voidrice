@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+[ "stat -c %y /tmp/weatherreport | awk '{print $1}'" != "$(date '+%Y-%m-%d')" ] && getforecast
+
+case $BLOCK_BUTTON in
+	1) st -e less -d -S /tmp/weatherreport ;;
+	3) ~/.scripts/getforecast ;;
+esac
+
+# Remove the weather icon, which is multiple bytes long
+wtr="$(curl -s "https://wttr.in/?format=%c+%t+%m")"
+#clr="$(echo "$wtr" | awk '{print $1}' | sed -r "s/☁/#b1b1b1/;s/🌫/#e0e0e0/;s/🌧/#203060/;s/❄/#a0a0ff/;s/🌨/#a0a0ff/;s/🌦/#344e9e/;s/🌧/#203060/;s/⛅/#c0c0c0/;s/☀/#e0fc0a/;s/🌩/#000000/;s/⛈/#8080dd/" 2>/dev/null)"
+
+printf "$wtr\n\n"
+printf "$color4"

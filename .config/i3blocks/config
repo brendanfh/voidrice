@@ -1,0 +1,76 @@
+command=~/.config/i3blocks/blocks/$BLOCK_NAME
+interval=once
+align=right
+color=#003060
+separator_block_width=8
+separator=false
+
+markup=pango
+
+[volume]
+interval=2
+signal=10
+
+[separator]
+
+[brightness]
+interval=10
+signal=9
+
+[separator]
+
+[wifi]
+interval=5
+signal=1
+
+[separator]
+
+[memory]
+interval=5
+signal=1
+
+[separator]
+
+[cpu]
+interval=5
+signal=1
+
+[separator]
+
+[disk]
+command=~/.config/i3blocks/blocks/disk "/dev/nvme0n1p1" 
+interval=300
+signal=1
+
+[separator]
+
+[battery]
+command=~/.config/i3blocks/blocks/battery "BAT0"
+interval=30
+signal=1
+
+# [separator]
+
+# [weather]
+# color=#ffffff
+# interval=3600
+# signal=5
+
+[separator]
+
+[calendar]
+interval=3600
+signal=1
+
+[separator]
+
+[time]
+interval=30
+signal=1
+
+[separator]
+
+[power]
+
+[separator]
+

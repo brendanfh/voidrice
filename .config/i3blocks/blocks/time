@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+case $BLOCK_BUTTON in
+esac
+
+printf "%s\n\n" "$(date '+ %H:%M')"
+printf "$color4"
