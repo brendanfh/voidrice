@@ -1,6 +1,8 @@
 #!/bin/sh
 
-wallpaper=$(find ~/Dropbox/Pictures/background | dmenu -i -fn monospace:11 -l 30 -p "Which background?")
+. /home/brendan/.scripts/random/dmenu_style
+
+wallpaper=$(ls ~/Dropbox/Pictures/background | dmenu -i -l 30 -p "Which background?")
 [ -z "$wallpaper" ] && exit 1
 
 # feh --bg-fill /home/brendan/Pictures/background/$wallpaper

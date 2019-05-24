@@ -7,8 +7,8 @@ local naughty = require "naughty"
 
 local dpi = xresources.apply_dpi
 
-local API_KEY = ""
-local city_id = ""
+local API_KEY = "7ab91e65e45e3d9b8f4dfb99708f9171"
+local city_id = "5231851"
 local units = "imperial"
 
 local weather = wibox.widget {

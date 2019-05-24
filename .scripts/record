@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. /home/brendan/.scripts/random/dmenu_style
+
 pgrep ffmpeg && exit 1
 
 choices="Exit
@@ -10,11 +12,11 @@ choices="Exit
 output_choices="/home/brendan/out.mkv
 /home/brendan/Videos/out.mkv"
 
-ch="$(echo "$choices" | dmenu -fn Monospace:11 -i -l 5 -p "Record size: ")"
+ch="$(echo "$choices" | dmenu -i -l 5 -p "Record size: ")"
 [ -z "$ch" ] && exit 1
 [ "$ch" == "Exit" ] && exit 1
 
-output="$(echo "$output_choices" | dmenu -fn Monospace:11 -i -l 5 -p "Output location: ")"
+output="$(echo "$output_choices" | dmenu -i -l 5 -p "Output location: ")"
 [ -z "$output" ] && exit 1
 
 rec() {
@@ -23,8 +25,7 @@ rec() {
 		pre="st -e "
 	fi
 
-	notify-send "Recording"
-	"$pre" ffmpeg -framerate 1 -f x11grab -s "$3","$4" -i :0.0+"$1","$2" -vf settb=\(1/30\),setpts=N/TB/30 -r 30 -vcodec libx264 -crf 0 -preset ultrafast -threads 0 "$5"
+	"$pre" ffmpeg -framerate 1 -f x11grab -s "$3","$4" -i :0.0+"$1","$2" -vf settb=\(1/30\),setpts=N/TB/30 -r 30 -vcodec libx264 -crf 0 -preset ultrafast -threads 0 "$5" && notify-send "Recording"
 }
 
 rec "$ch" "$output"

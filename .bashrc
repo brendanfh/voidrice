@@ -22,7 +22,7 @@ export TERMINAL='st'
 #export PATH=~/tools/wabt/out/gcc/Release:$PATH
 #export PATH=/home/brendan/.yarn/bin:$PATH
 #export PATH=~/.pub-cache/bin:$PATH
-export PATH="$HOME/.local/bin/$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=~/.scripts:$PATH
 source $HOME/.shortcuts
 
@@ -42,9 +42,9 @@ m() {
 	man -k "^$@$" >/dev/null && man -Tpdf "$@" | zathura - ;
 }
 
-. /home/brendan/.cache/wal/colors.sh
-
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+
+. /home/brendan/.cache/wal/colors.sh
 
 # neofetch
 ufetch

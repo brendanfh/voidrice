@@ -1,6 +1,8 @@
 #!/bin/sh
 
-sname=$(ls -al ~/.scripts | awk '/^-rwx/ {print $9}' | dmenu -fn monospace:11 -l 5 -p "Run which script?")
+. /home/brendan/.scripts/random/dmenu_style
+
+sname=$(ls -al ~/.scripts | awk '/^-rwx/ {print $9}' | dmenu -l 5 -p "Run which script?")
 [ -z "$sname" ] && exit 1
 
 ~/.scripts/"$sname"

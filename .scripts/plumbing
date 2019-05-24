@@ -17,6 +17,6 @@ QRCode() {
 	qrencode "$@" -s 10 -o /tmp/qr.png && sxiv /tmp/qr.png ;	
 }
 
-cmd="$(declare -F | awk '{print $3}' | dmenu -fn Monospace:11 -p "$sel selected: " -l 5)"
+cmd="$(declare -F | awk '{print $3}' | dmenu -p "$sel selected: " -l 5)"
 
 [ -z "$cmd" ] || "$cmd" "$sel"

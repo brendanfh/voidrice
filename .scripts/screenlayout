@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /home/brendan/.scripts/random/dmenu_style
+
 layout=$(find ~/.screenlayout/ | awk -F"." '{print $1}' | dmenu -fn monospace:11 -l 5 -p "Layout:")
 [ -z "$layout" ] && exit 0
 

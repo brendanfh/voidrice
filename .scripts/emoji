@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. /home/brendan/.scripts/random/dmenu_style
+
+emojiline="$(dmenu -l 20 < ~/.config/emoji_working)"
+[ -z "$emojiline" ] && exit
+
+emoji="$(echo "$emojiline" | cut -d' ' -f1 )"
+(echo "$emoji" | tr -d '\n'| xclip -selection clipboard -i) && notify-send "$emoji copied to clipboard"
+(echo "$emoji" | tr -d '\n'| xclip ) && notify-send "$emoji copied to primary"
