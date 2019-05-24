@@ -93,7 +93,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeWarn, SchemeUrgent }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayOrientationHorz,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
@@ -832,16 +832,45 @@ drawbar(Monitor *m)
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
+	char *text_p = stext, *text_s = stext;
+	char char_tmp;
 	Client *c;
 
 	if(showsystray && m == systraytomon(m))
 		stw = getsystraywidth();
 
+	int tx = -stw;
+	const int clrw = TEXTW("\x04") - lrpad;
+
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		sw = TEXTW(stext) - lrpad / 2 + 2; /* 2px right padding */
-		drw_text(drw, m->ww - sw - stw, 0, sw, bh, lrpad / 2 - 2, stext, 0);
+		while (*text_p) {
+			if (*text_p <= LENGTH(colors)) {
+				sw -= clrw;
+			}
+			text_p++;
+		}
+		text_p = text_s;
+
+//		drw_text(drw, m->ww - sw - stw, 0, sw, bh, lrpad / 2 - 2, stext, 0);
+		while (1) {
+			if ((unsigned int) *text_s > LENGTH(colors)) {
+				text_s++;
+				continue;
+			}
+			char_tmp = *text_s;
+			*text_s = '\0';
+			drw_text(drw, m->ww - sw + tx, 0, sw - tx, bh, 0, text_p, 0);
+			tx += TEXTW(text_p) - lrpad;
+			if (char_tmp == '\0') {
+				break;
+			}
+			drw_setscheme(drw, scheme[(unsigned int) (char_tmp - 1)]);
+			*text_s = char_tmp;
+			text_p = ++text_s;
+		}
 	}
 
 	resizebarwin(m);

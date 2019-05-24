@@ -19,11 +19,19 @@ static char normfgcolor[]     = "#bbbbbb";
 static char selbordercolor[]  = "#005577";
 static char selbgcolor[]      = "#005577";
 static char selfgcolor[]      = "#eeeeee";
+static char warnbordercolor[]  = "#005577";
+static char warnbgcolor[]      = "#005577";
+static char warnfgcolor[]      = "#eeeeee";
+static char urgentbordercolor[]  = "#ff0000";
+static char urgentbgcolor[]      = "#330000";
+static char urgentfgcolor[]      = "#ff4444";
 
 static const char *colors[][3]      = {
-	/*               fg           bg           border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	/*               fg               bg             border   */
+	[SchemeNorm]   = { normfgcolor,   normbgcolor,   normbordercolor   },
+	[SchemeSel]    = { selfgcolor,    selbgcolor,    selbordercolor    },
+	[SchemeWarn]   = { warnfgcolor,   warnbgcolor,   warnbordercolor   },
+	[SchemeUrgent] = { urgentfgcolor, urgentbgcolor, urgentbordercolor },
 };
 
 /* tagging */
