@@ -2,4 +2,4 @@
 
 . /home/brendan/.cache/wal/colors.sh
 
-alias dmenu="dmenu -fn SourceCodePro-Bold:size=14 -nb \"$color0\" -nf \"$color7\" -sb \"$color2\" -sf \"$color0\""
+alias dmenu="dmenu -fn SourceCodePro-Bold:size=14 -nb \"${color0}\" -nf \"${color7}\" -sb \"${color2}\" -sf \"${color0}\""

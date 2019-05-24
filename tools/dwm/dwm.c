@@ -1214,6 +1214,9 @@ loadxrdb()
     XRDB_LOAD_COLOR("dwm.color4", selbordercolor);
     XRDB_LOAD_COLOR("dwm.color2", selbgcolor);
     XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
+    XRDB_LOAD_COLOR("dwm.color4", warnbordercolor);
+    XRDB_LOAD_COLOR("dwm.color4", warnbgcolor);
+    XRDB_LOAD_COLOR("dwm.color7", warnfgcolor);
   }
 }
 
@@ -2618,9 +2621,13 @@ xrdb(const Arg *arg)
   const char *sel_clrnames[] = {
 	  selfgcolor, selbgcolor, selbordercolor
   };
+  const char *warn_clrnames[] = {
+	  warnfgcolor, warnbgcolor, warnbordercolor
+  };
 
   scheme[SchemeNorm] = drw_scm_create(drw, norm_clrnames, 3);
   scheme[SchemeSel] = drw_scm_create(drw, sel_clrnames, 3);
+  scheme[SchemeWarn] = drw_scm_create(drw, warn_clrnames, 3);
 
 // scheme[SchemeNorm] = drw_clr_create(drw, normbordercolor);
 // scheme[SchemeNorm]->bg = drw_clr_create(drw, normbgcolor);

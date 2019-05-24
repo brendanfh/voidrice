@@ -4,7 +4,7 @@ volume() {
 	volstat="$(pamixer --get-volume-human)"
 	volicon=""
 	volcol="\x03"
-	[ "$volstat" = "muted" ] && volicon="" && volcol="\x04"
+	[ "$volstat" = "muted" ] && volicon="" && volcol="\x04"
 	echo "$volcol $volicon $volstat"
 }
 
