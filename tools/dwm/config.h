@@ -100,6 +100,7 @@ static const char *notepadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", 
 static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle", NULL };
 static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
 
 #include "selfrestart.c"
 #include "push.c"
@@ -156,6 +157,8 @@ static Key keys[] = {
 	{ 0,							XF86XK_AudioLowerVolume, spawn, { .v = downvolcmd } },
 	{ 0,							XF86XK_AudioMute, spawn, { .v = mutecmd } },
 	{ 0,							XF86XK_AudioRaiseVolume, spawn, { .v = upvolcmd } },
+
+	{ MODKEY|ShiftMask,				XK_z,	   spawn,		   { .v = laptopcmd } },
 };
 
 /* button definitions */

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+wallpaper="$(
+	cat \
+		<(find "$HOME/Pictures/wallpapers" -name "*.jpg") \
+		<(find "$HOME/Pictures/wallpapers" -name "*.png") \
+		<(find "$HOME/Dropbox/Pictures/background" -name "*.jpg") \
+		<(find "$HOME/Dropbox/Pictures/background" -name "*.png") \
+		| shuf -n 1
+)"
+
+wal -i "$wallpaper" && notify-send "Set background" "$wallpaper"

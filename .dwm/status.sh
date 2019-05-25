@@ -23,7 +23,8 @@ memory() {
 }
 
 battery() {
-	battery_perc="$(acpi | grep -Eo '[0-9]+\%' | cut -d'%' -f1)"
+	acpiout="$(acpi)"
+	battery_perc="$(echo "$acpiout" | grep -Eo '[0-9]+\%' | cut -d'%' -f1)"
 
 	battery_icon="BAT"
 	battery_color='\x02'
@@ -43,6 +44,8 @@ battery() {
 	if [ "$battery_perc" -lt "25" ]; then
 		battery_color='\x04' ;
 	fi
+
+	$(echo "$acpiout" | grep -qi " charging") && battery_color='\x01'
 
 	echo "${battery_color} ${battery_icon} ${battery_perc}%"
 }

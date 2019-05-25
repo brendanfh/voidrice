@@ -2,7 +2,7 @@
 
 . /home/brendan/.scripts/random/dmenu_style
 
-sname=$(ls -al ~/.scripts | awk '/^-rwx/ {print $9}' | dmenu -l 5 -p "Run which script?")
+sname=$(ls -al ~/.scripts | awk '/^-rwx/ {print $9}' | dmenu -l 10 -p "Run which script?")
 [ -z "$sname" ] && exit 1
 
 ~/.scripts/"$sname"
