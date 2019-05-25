@@ -5,7 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Disable Ctrl-s and Ctrl-q stty -ixon
+# Disable Ctrl-s and Ctrl-q
+stty -ixon
 
 # cd automatically
 shopt -s autocd

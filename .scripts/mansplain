@@ -1,7 +1,5 @@
 #!/bin/sh
 # THIS WAS ENTIRELY STOLEN FROM LUKE SMITH BUT HES AWESOME SO ITS OKAY
 
-. /home/brendan/.scripts/random/dmenu_style
-
 man -k . | dmenu -l 20 | awk -F"[\(\)]" '{print $1}' | xargs -r man -Tpdf | zathura -
 

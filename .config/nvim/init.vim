@@ -6,7 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
-" Plugin 'w0rp/ale'
+Plugin 'w0rp/ale'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 " Plugin 'tomasiser/vim-code-dark'

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. /home/brendan/.scripts/random/dmenu_style
-
 emojiline="$(dmenu -l 20 < ~/.config/emoji_working)"
 [ -z "$emojiline" ] && exit
 

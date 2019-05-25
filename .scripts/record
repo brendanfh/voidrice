@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. /home/brendan/.scripts/random/dmenu_style
-
 pgrep ffmpeg && exit 1
 
 choices="Exit

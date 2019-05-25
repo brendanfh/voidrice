@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. /home/brendan/.scripts/random/dmenu_style
-
 doc=$(find ~/Dropbox -name '*.pdf' | dmenu -i -l 10 -p "Open which document?")
 [ -z "$doc" ] && exit 0
 
