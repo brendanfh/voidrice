@@ -3,9 +3,20 @@
 volume() {
 	volstat="$(pamixer --sink 0 --get-volume-human)"
 	volicon=""
-	volcol="\x03"
+	volcol="\x02"
 	[ "$volstat" = "muted" ] && volicon="" && volcol="\x04"
 	echo "$volcol $volicon $volstat"
+}
+
+temp() {
+	tempcolor="\x03"
+	temp="$(sensors -u | awk -F'[ :.]' '/temp2_input/ { print $5 }')"
+
+	if [ "$temp" -ge "60" ] ; then
+		tempcolor="\x04" ;
+	fi
+
+	echo "$tempcolor  $temp°C"
 }
 
 cpu() {
@@ -55,7 +66,7 @@ datetime() {
 }
 
 while true; do
-	stat="$(volume) \x02  $(cpu) \x03  $(memory) $(battery) \x03 $(datetime) "
+	stat="$(volume) $(temp) \x02  $(cpu) \x03  $(memory) $(battery) \x03 $(datetime) "
 	# Use the bash echo
 	xsetroot -name "$(/bin/echo -en "$stat")"
 	sleep 1;

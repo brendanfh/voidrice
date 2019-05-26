@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+pkill dunst
+
 source "${HOME}/.cache/wal/colors.sh"
 
 /usr/local/bin/dunst \

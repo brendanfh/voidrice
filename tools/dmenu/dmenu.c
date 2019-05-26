@@ -726,7 +726,7 @@ setup(void)
 
 		mw = MIN(MAX(max_textw() + promptw, min_width), info[i].width - 2 * border_width);
 		x = info[i].x_org + ((info[i].width  - mw) / 2) - border_width;
-		y = info[i].y_org + ((info[i].height - mh) / 2);
+		y = info[i].y_org + ((info[i].height - mh) / 3);
 		XFree(info);
 	} else
 #endif
@@ -736,7 +736,7 @@ setup(void)
 			    parentwin);
 		mw = MIN(MAX(max_textw() + promptw, min_width), wa.width - 2 * border_width);
 		x = (wa.width  - mw) / 2 - border_width;
-		y = (wa.height - mh) / 2;
+		y = (wa.height - mh) / 3;
 	}
 	inputw = MIN(inputw, mw/3);
 	match();
@@ -777,7 +777,7 @@ static void
 usage(void)
 {
 	fputs("usage: dmenu [-bfiPnv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
-	      "             [-h height]\n"
+	      "             [-h height] [-mw minimum_width]\n"
 	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n", stderr);
 	exit(1);
 }
@@ -818,6 +818,10 @@ main(int argc, char *argv[])
 		else if(!strcmp(argv[i], "-h")) { /* minimum height of one menu line */
 			lineheight = atoi(argv[++i]);
 			lineheight = MAX(lineheight,8); /* reasonable default in case of value too small/negative */
+		}
+		else if (!strcmp(argv[i], "-mw")) {
+			min_width = atoi(argv[++i]);
+			min_width = MAX(min_width, 100);
 		}
 		else if (!strcmp(argv[i], "-nb"))  /* normal background color */
 			colors[SchemeNorm][ColBg] = argv[++i];
