@@ -1,0 +1,6 @@
+#!/bin/sh
+
+tool="$(printf "htop\nncpamixer\nncdu" | dmenu -p "Run tool: ")"
+[ -z "$tool" ] && exit 1
+
+st -e "$tool"

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+wallpaper=$( \
+	cat \
+		<(find "$HOME/Pictures/wallpapers" -name "*.jpg") \
+		<(find "$HOME/Pictures/wallpapers" -name "*.png") \
+		<(find "$HOME/Dropbox/Pictures/background" -name "*.jpg") \
+		<(find "$HOME/Dropbox/Pictures/background" -name "*.png") \
+	| dmenu -n -i -l 20 -p "Which background?" \
+)
+[ -z "$wallpaper" ] && exit 1
+
+/home/brendan/.scripts/utils/set_background.sh "$wallpaper"
+

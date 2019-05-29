@@ -14,9 +14,13 @@ shopt -s autocd
 # Infinite history
 HISTSIZE='' HISTFILESIZE=''
 
+# VI mode
+set -o vi
+
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 export EDITOR='nvim'
+export BROWSER='firefox'
 export TERMINAL='st'
 
 #export PATH=~/.nimble/bin:$PATH
@@ -24,7 +28,7 @@ export TERMINAL='st'
 #export PATH=/home/brendan/.yarn/bin:$PATH
 #export PATH=~/.pub-cache/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH=~/.scripts:$PATH
+export PATH="$HOME/.scripts/utils:$PATH"
 source $HOME/.shortcuts
 
 alias ls='ls --color=auto'
@@ -33,6 +37,7 @@ alias cl="clear; ls -lh"
 alias md="mkdir -p"
 alias SS="sudo sv"
 alias xi="sudo xbps-install"
+alias xq="xbps-query -R -s"
 alias ccat="highlight --out-format=ansi"
 alias oof="sudo"
 alias v="$EDITOR"
@@ -44,6 +49,8 @@ m() {
 }
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+
+export NNN_USE_EDITOR=1
 
 . /home/brendan/.cache/wal/colors.sh
 

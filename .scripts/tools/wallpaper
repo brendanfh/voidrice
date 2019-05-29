@@ -1,0 +1,22 @@
+#!/bin/sh
+
+kind="$(echo "Landscapes
+Cityscapes
+Vibrant
+Personal
+Etc
+Tech
+Future" | dmenu -p "Which kind of wallpaper?")"
+
+fullpath=""
+[ "$kind" = "Landscapes" ] && fullpath="/home/brendan/Pictures/wallpapers/Landscapes/*"
+[ "$kind" = "Cityscapes" ] && fullpath="/home/brendan/Pictures/wallpapers/Cityscapes/*"
+[ "$kind" = "Vibrant" ] && fullpath="/home/brendan/Pictures/wallpapers/Vibrant/*"
+[ "$kind" = "Etc" ] && fullpath="/home/brendan/Pictures/wallpapers/Etc/*"
+[ "$kind" = "Tech" ] && fullpath="/home/brendan/Pictures/wallpapers/Tech/*"
+[ "$kind" = "Future" ] && fullpath="/home/brendan/Pictures/wallpapers/Future/*"
+[ "$kind" = "Personal" ] && fullpath="/home/brendan/Dropbox/Pictures/background/*"
+
+[ -z "$fullpath" ] && exit 1
+
+sxiv -f -t $fullpath

@@ -52,7 +52,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "layouts.c" // Grid layout
 
@@ -102,6 +102,13 @@ static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "tog
 static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
 
+/*
+Mod+Shift+o spawn "/home/brendan/.scripts/scripts"
+XF86XK_AudioLowerVolume spawn "/usr/bin/pactl set-sink-volume 0 -5%"
+XF86XK_AudioRaiseVolume spawn "/usr/bin/pactl set-sink-volume 0 +5%"
+
+*/
+
 #include "selfrestart.c"
 #include "push.c"
 
@@ -129,7 +136,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_h,      setlayout,      {.v = &layouts[4]} },
+	// { MODKEY,                       XK_h,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY|ControlMask,			XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,			XK_period, cyclelayout,    {.i = +1 } },

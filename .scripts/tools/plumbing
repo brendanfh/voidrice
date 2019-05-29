@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # The whole idea of this script was stole from Luke Smith
 
@@ -6,11 +6,11 @@ sel="$(xclip -o)"
 [ -z "$sel" ] && exit 1
 
 Search() {
-	chromium "https://duckduckgo.com/?q=$@";
+	$BROWSER "https://duckduckgo.com/?q=$@";
 }
 
 Maps() {
-	chromium "https://openstreetmap.org/search?query=$@" ;
+	$BROWSER "https://openstreetmap.org/search?query=$@" ;
 }
 
 QRCode() {
