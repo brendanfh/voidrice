@@ -6,7 +6,7 @@ Vibrant
 Personal
 Etc
 Tech
-Future" | dmenu -p "Which kind of wallpaper?")"
+Future" | dmenu -i -p "Which kind of wallpaper?")"
 
 fullpath=""
 [ "$kind" = "Landscapes" ] && fullpath="/home/brendan/Pictures/wallpapers/Landscapes/*"

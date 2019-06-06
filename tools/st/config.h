@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "SourceCodePro-Medium:pixelsize=14:antialias=true:autohint=true";
+static char *font = "SourceCodePro-Medium:pixelsize=16:antialias=true:autohint=true";
 // static char *font = "Mechanical:size=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
@@ -84,9 +84,10 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
+// unsigned int alpha = 0x44;
 // unsigned int alpha = 0xcc;
-unsigned int alpha = 0xdd;
-// unsigned int alpha = 0xee;
+// unsigned int alpha = 0xdd;
+unsigned int alpha = 0xee;
 
 static const char *colorname[] = {
 

@@ -9,4 +9,5 @@ wallpaper="$(
 		| shuf -n 1
 )"
 
-wal -i "$wallpaper" && notify-send "Set background" "$wallpaper"
+/home/brendan/.scripts/utils/set_background "$wallpaper" "$wallpaper"
+

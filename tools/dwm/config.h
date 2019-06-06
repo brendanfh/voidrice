@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "3", "4", "5", "6", "", "", "" };
+static const char *tags[] = { "", "", "3", "4", "5", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,14 +43,17 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Chromium", NULL,		  NULL,       1 << 1, 		0, 			 -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 8, 		0, 			 -1 },
+	{ "Gimp",        NULL,       NULL,       0,            1,            -1 },
+	{ "Firefox",     NULL,       NULL,       1 << 1,       0,            -1 },
+	{ "qutebrowser", NULL,       NULL,       1 << 1,       0,            -1 },
+	{ "Chromium",    NULL,	     NULL,       1 << 1, 	   0,   		 -1 },
+	{ "discord",     NULL,       NULL,       1 << 5, 	   0, 			 -1 },
+	{ "Slack",       NULL,       NULL,       1 << 6, 	   0, 			 -1 },
+	{ "Spotify",     NULL,       NULL,       1 << 8, 	   0, 			 -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -101,6 +104,8 @@ static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-
 static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle", NULL };
 static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
+static const char *brightupcmd[] = { "/bin/xbacklight", "+5%", NULL };
+static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
 
 /*
 Mod+Shift+o spawn "/home/brendan/.scripts/scripts"
@@ -164,6 +169,9 @@ static Key keys[] = {
 	{ 0,							XF86XK_AudioLowerVolume, spawn, { .v = downvolcmd } },
 	{ 0,							XF86XK_AudioMute, spawn, { .v = mutecmd } },
 	{ 0,							XF86XK_AudioRaiseVolume, spawn, { .v = upvolcmd } },
+
+	{ 0,							XF86XK_MonBrightnessUp, spawn, { .v = brightupcmd } },
+	{ 0,							XF86XK_MonBrightnessDown, spawn, { .v = brightdowncmd } },
 
 	{ MODKEY|ShiftMask,				XK_z,	   spawn,		   { .v = laptopcmd } },
 };

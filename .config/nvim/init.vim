@@ -5,26 +5,42 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+" Useful utilities
 Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
 Plugin 'kien/ctrlp.vim'
+
+" Themeing
 Plugin 'vim-airline/vim-airline'
-" Plugin 'tomasiser/vim-code-dark'
-" Plugin 'ErichDonGubler/vim-sublime-monokai'
-" Plugin 'floobits/floobits-neovim'
-Plugin 'edkolev/tmuxline.vim'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'ErichDonGubler/vim-sublime-monokai'
 " Plugin 'yous/vim-open-color'
-" Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'chriskempson/vim-tomorrow-theme'
-" Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'dylanaraps/wal.vim'
+Plugin 'edkolev/tmuxline.vim'
+
 " Plugin 'zah/nim.vim'
+" Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'xuhdev/vim-latex-live-preview'
+
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
+
+" Git additions
 Plugin 'tpope/vim-fugitive'
+
+" Floobits
+" Plugin 'floobits/floobits-neovim'
+
+" Distraction free mode
 Plugin 'junegunn/goyo.vim'
+
+" Typescript
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
+
 
 call vundle#end()
 filetype plugin indent on

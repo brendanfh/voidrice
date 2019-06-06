@@ -1,10 +1,15 @@
 #!/bin/sh
 
+light=""
+[ "$THEME" = "light" ] && light="-l"
+
 # Set the background
-wal -i "$1" && notify-send "Set background" "$2"
+wal $light -i "$1"
 
 # Update record of background
 echo "$1" > ~/.background
 
 # Restart dunst for colors
 /home/brendan/.dwm/dunst_launch.sh &
+
+sleep 0.5 && notify-send "Set background" "$2"

@@ -25,7 +25,7 @@ export TERMINAL='st'
 
 #export PATH=~/.nimble/bin:$PATH
 #export PATH=~/tools/wabt/out/gcc/Release:$PATH
-#export PATH=/home/brendan/.yarn/bin:$PATH
+export PATH="/home/brendan/.yarn/bin:$PATH"
 #export PATH=~/.pub-cache/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts/utils:$PATH"
@@ -48,24 +48,28 @@ m() {
 	man -k "^$@$" >/dev/null && man -Tpdf "$@" | zathura - ;
 }
 
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+vf() {
+	fzf | xargs -r $EDITOR
+}
 
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export NNN_USE_EDITOR=1
+export QUTEWAL_DYNAMIC_LOADING=True
 
 . /home/brendan/.cache/wal/colors.sh
 
 # neofetch
 ufetch
 
-function _update_ps1() {
-	PS1=$(/home/brendan/.local/bin/powerline-shell $?)
-}
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+# function _update_ps1() {
+# 	PS1=$(/home/brendan/.local/bin/powerline-shell $?)
+# }
+# 
+# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+# 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 
 
 # Old PS1s
 # PS1='[\u@\h \W]\$ '
-# export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;36m\]\u\[$(tput sgr0)\]\[\033[38;5;31m\]@\[$(tput sgr0)\]\[\033[38;5;36m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;88m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;34m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\\n\\$\[$(tput sgr0)\] "
+export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;36m\]\u\[$(tput sgr0)\]\[\033[38;5;31m\]@\[$(tput sgr0)\]\[\033[38;5;36m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;88m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;34m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\\$\[$(tput sgr0)\] "
