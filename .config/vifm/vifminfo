@@ -1,0 +1,427 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/brendan/
+	..
+1559933472
+'b
+	/home/brendan/bin/
+	..
+1560049414
+'d
+	/home/brendan/Dropbox/dev
+	c
+1560051710
+'h
+	/home/brendan/
+	..
+1559935701
+'u
+	/home/brendan/Dropbox/DSU
+	..
+1560050678
+'z
+	/home/brendan/.config/vifm
+	..
+1559933472
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/brendan/Dropbox/DSU
+	CIS484
+2
+d/home/brendan/Dropbox/DSU/CIS484
+	cis 484 D30 ind1.doc
+24
+d/home/brendan/Dropbox/DSU
+	CIS484
+2
+d/home/brendan/Dropbox
+	dev
+7
+d/home/brendan/Dropbox/dev
+	R
+1
+d/home/brendan/Dropbox/dev/R
+	machineLearning.r
+1
+d/home/brendan/Dropbox/dev
+	asm
+2
+d/home/brendan/Dropbox/dev/asm
+	..
+0
+d/home/brendan/Dropbox/dev
+	c
+4
+d/home/brendan/Dropbox/dev/c
+	ttyfps
+7
+d/home/brendan/Dropbox/dev/c/ttyfps
+	..
+0
+d/home/brendan/Dropbox/dev/c
+	turtle
+8
+d/home/brendan/Dropbox/dev/c/turtle
+	..
+0
+d/home/brendan/.config/vifm
+	vifmrc
+5
+d/home/brendan/.config
+	spotify
+27
+d/home/brendan/.config/spotify
+	..
+0
+d/home/brendan/.config
+	spotify
+27
+d/home/brendan
+	tools
+9
+d/home/brendan/tools
+	dmenu
+1
+d/home/brendan
+	tools
+9
+d/home
+	brendan
+1
+d/home/brendan
+	tmp
+8
+d/home/brendan/tmp
+	oracle
+1
+d/home/brendan
+	Pictures
+6
+d/home/brendan/Pictures
+	..
+0
+d/home/brendan
+	Pictures
+6
+d/home/brendan/Pictures
+	wallpapers
+1
+d/home/brendan/Pictures/wallpapers
+	Titans
+8
+d/home/brendan/Pictures/wallpapers/Titans
+	1445660007098.jpg
+2
+d/home/brendan/Pictures/wallpapers
+	Unsorted
+9
+d/home/brendan/Pictures/wallpapers/Unsorted
+	IMG_20170921_190205.jpg
+19
+d/home/brendan/Pictures/wallpapers
+	Vibrant
+10
+d/home/brendan/Pictures/wallpapers/Vibrant
+	9f6ca19dea468d9e01d06462f471c74f4df447d5ad0ab7123ee1a5a6bd022030.png
+2
+d/home/brendan/Pictures/wallpapers
+	Etc
+3
+d/home/brendan/Pictures/wallpapers/Etc
+	..
+0
+d/home/brendan/Pictures/wallpapers
+	Etc
+3
+d/home/brendan/Pictures
+	wallpapers
+1
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/Dropbox
+	dev
+7
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/.config/vifm
+	vifm-help.txt
+3
+d/home/brendan/.config
+	vifm
+31
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/Dropbox
+	dev
+7
+d/home/brendan/Dropbox/dev
+	c
+4
+d/home/brendan/Dropbox/dev/c
+	turtle
+8
+d/home/brendan/Dropbox/dev/c/turtle
+	turtle
+3
+d/home/brendan/Dropbox/dev/c/turtle/turtle
+	turtle.h
+2
+d/home/brendan/Dropbox/dev/c/turtle
+	turtle
+3
+d/home/brendan/Dropbox/dev/c
+	turtle
+8
+d/home/brendan/Dropbox/dev
+	cpp
+5
+d/home/brendan/Dropbox/dev/cpp
+	citrus.cpp
+20
+d/home/brendan/Dropbox/dev
+	dart
+8
+d/home/brendan/Dropbox/dev/dart
+	speedtest
+2
+d/home/brendan/Dropbox/dev/dart/speedtest
+	web
+2
+d/home/brendan/Dropbox/dev/dart/speedtest/web
+	src
+1
+d/home/brendan/Dropbox/dev/dart/speedtest/web/src
+	other.dart
+3
+d/home/brendan/Dropbox/dev/dart/speedtest/web
+	src
+1
+d/home/brendan/Dropbox/dev/dart/speedtest
+	web
+2
+d/home/brendan/Dropbox/dev/dart
+	speedtest
+2
+d/home/brendan/Dropbox/dev
+	lua
+16
+d/home/brendan/Dropbox/dev/lua
+	nnGame
+8
+d/home/brendan/Dropbox/dev/lua/nnGame
+	LICENSE
+3
+d/home/brendan/.config/vifm
+	vifmrc
+5
+d/home/brendan/.config
+	vifm
+31
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/Dropbox/dev
+	crystal
+6
+d/home/brendan/Dropbox/dev/crystal
+	first
+1
+d/home/brendan/Dropbox/dev
+	dart
+8
+d/home/brendan/Dropbox/dev/dart
+	sliding_tiles
+1
+d/home/brendan/Dropbox/dev/dart/sliding_tiles
+	web
+2
+d/home/brendan/Dropbox/dev/dart/sliding_tiles/web
+	src
+1
+d/home/brendan/Dropbox/dev/dart/sliding_tiles/web/src
+	gfx
+1
+d/home/brendan/Dropbox/dev/dart/sliding_tiles/web/src/gfx
+	batch_renderer.dart
+1
+d/home/brendan/Dropbox/dev/dart/sliding_tiles/web/src
+	main.dart
+3
+d/home/brendan/Dropbox/dev/dart/sliding_tiles/web
+	src
+1
+d/home/brendan/Dropbox/dev/dart/sliding_tiles
+	web
+2
+d/home/brendan/Dropbox/dev/dart
+	sliding_tiles
+1
+d/home/brendan/Dropbox/dev
+	jupyter
+13
+d/home/brendan/Dropbox/dev/jupyter
+	..
+0
+d/home/brendan/Dropbox/dev
+	js
+12
+d/home/brendan/Dropbox/dev/js
+	codebox
+1
+d/home/brendan/Dropbox/dev/js/codebox
+	web
+5
+d/home/brendan/Dropbox/dev/js/codebox/web
+	views
+2
+d/home/brendan/Dropbox/dev/js/codebox/web/views
+	problem
+3
+d/home/brendan/Dropbox/dev/js/codebox/web/views/problem
+	..
+0
+d/home/brendan/Dropbox/dev/js/codebox/web/views
+	problem
+3
+d/home/brendan/Dropbox/dev/js/codebox/web
+	static
+1
+d/home/brendan/Dropbox/dev/js/codebox/web/static
+	css
+1
+d/home/brendan/Dropbox/dev/js/codebox/web
+	static
+1
+d/home/brendan/Dropbox/dev/js/codebox
+	server
+3
+d/home/brendan/Dropbox/dev/js/codebox/server
+	database.ts
+5
+d/home/brendan/.config/vifm
+	vifmrc
+5
+d/home/brendan/Dropbox/dev
+	js
+12
+d/home/brendan/Dropbox/dev/js
+	codebox
+1
+d/home/brendan/Dropbox/dev/js/codebox
+	executer
+2
+d/home/brendan/Dropbox/dev/js/codebox/executer
+	..
+0
+d/home/brendan/Dropbox/dev/js/codebox
+	server
+3
+d/home/brendan/Dropbox/dev/js/codebox/server
+	scoring_system.ts
+10
+d/home/brendan
+	highlight.css
+11
+d
+
+# Right window history (oldest to newest):
+D/home/brendan
+	..
+0
+D/home/brendan/Dropbox/DSU
+	CIS484
+2
+D/home/brendan/Dropbox/DSU/CIS484
+	assignment2-brendan-hansen.pdf
+21
+D
+
+# Command line history (oldest to newest):
+:view
+:marks
+:!sxiv %d
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/brendan/.local/share/vifm/Trash/000_vifmrc
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/brendan/.local/share/vifm/Trash/000_2019-06-07-185450_1361x976_scrot.png
+	/home/brendan/2019-06-07-185450_1361x976_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-144119_714x512_scrot.png
+	/home/brendan/tmp/2019-05-18-144119_714x512_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-144253_668x249_scrot.png
+	/home/brendan/tmp/2019-05-18-144253_668x249_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-145317_885x693_scrot.png
+	/home/brendan/tmp/2019-05-18-145317_885x693_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-145639_894x763_scrot.png
+	/home/brendan/tmp/2019-05-18-145639_894x763_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-152436_476x147_scrot.png
+	/home/brendan/tmp/2019-05-18-152436_476x147_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-152445_621x143_scrot.png
+	/home/brendan/tmp/2019-05-18-152445_621x143_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-152457_631x287_scrot.png
+	/home/brendan/tmp/2019-05-18-152457_631x287_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-152505_652x456_scrot.png
+	/home/brendan/tmp/2019-05-18-152505_652x456_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-161928_966x259_scrot.png
+	/home/brendan/tmp/2019-05-18-161928_966x259_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-161936_867x529_scrot.png
+	/home/brendan/tmp/2019-05-18-161936_867x529_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-05-18-161944_858x420_scrot.png
+	/home/brendan/tmp/2019-05-18-161944_858x420_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_SIL Open Font License.txt
+	/home/brendan/tmp/SIL Open Font License.txt
+t/home/brendan/.local/share/vifm/Trash/000_FONTLOG.txt
+	/home/brendan/tmp/FONTLOG.txt
+t/home/brendan/.local/share/vifm/Trash/000_Void_Linux_logo.png
+	/home/brendan/tmp/Void_Linux_logo.png
+t/home/brendan/.local/share/vifm/Trash/000_assignment2-brendan-hansen.pdf
+	/home/brendan/tmp/assignment2-brendan-hansen.pdf
+t/home/brendan/.local/share/vifm/Trash/000_mountains.jpg
+	/home/brendan/tmp/mountains.jpg
+t/home/brendan/.local/share/vifm/Trash/000_kineticplasma-fonts_mechanical.zip
+	/home/brendan/tmp/kineticplasma-fonts_mechanical.zip
+t/home/brendan/.local/share/vifm/Trash/000_tabbed-surf.xid
+	/home/brendan/tmp/tabbed-surf.xid
+t/home/brendan/.local/share/vifm/Trash/000_test.c
+	/home/brendan/tmp/test.c
+t/home/brendan/.local/share/vifm/Trash/000_test
+	/home/brendan/tmp/test
+t/home/brendan/.local/share/vifm/Trash/000_vifmrc
+	/home/brendan/tmp/vifmrc
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

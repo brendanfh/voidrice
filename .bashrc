@@ -41,6 +41,8 @@ alias xq="xbps-query -R -s"
 alias ccat="highlight --out-format=ansi"
 alias oof="sudo"
 alias v="$EDITOR"
+alias r="ranger"
+alias f="$HOME/.config/vifm/scripts/vifmrun"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
 
@@ -53,7 +55,6 @@ vf() {
 }
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export NNN_USE_EDITOR=1
 export QUTEWAL_DYNAMIC_LOADING=True
 
 . /home/brendan/.cache/wal/colors.sh
@@ -72,4 +73,4 @@ ufetch
 
 # Old PS1s
 # PS1='[\u@\h \W]\$ '
-export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;36m\]\u\[$(tput sgr0)\]\[\033[38;5;31m\]@\[$(tput sgr0)\]\[\033[38;5;36m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;88m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;34m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]]\[$(tput sgr0)\]\\$\[$(tput sgr0)\] "
+export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[34m\]\u\[$(tput sgr0)\]\[\033[37m\]@\[$(tput sgr0)\]\[\033[34m\]\h\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[31m\]\$?\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[32m\]\W\[$(tput sgr0)\]\[\033[37m\]]\[$(tput sgr0)\]\\n\\$\[$(tput sgr0)\] "
