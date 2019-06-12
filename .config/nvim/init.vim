@@ -5,98 +5,120 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" Useful utilities
-Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
-Plugin 'kien/ctrlp.vim'
+" ===== PLUGINS =====
+	" Useful utilities
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'vifm/vifm.vim'
+	Plugin 'w0rp/ale'
+	Plugin 'kien/ctrlp.vim'
 
-" Themeing
-Plugin 'vim-airline/vim-airline'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'ErichDonGubler/vim-sublime-monokai'
-" Plugin 'yous/vim-open-color'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dylanaraps/wal.vim'
-Plugin 'edkolev/tmuxline.vim'
+	" Themeing
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'tomasiser/vim-code-dark'
+	Plugin 'ErichDonGubler/vim-sublime-monokai'
+	" Plugin 'yous/vim-open-color'
+	Plugin 'chriskempson/vim-tomorrow-theme'
+	Plugin 'altercation/vim-colors-solarized'
+	Plugin 'dylanaraps/wal.vim'
+	Plugin 'edkolev/tmuxline.vim'
 
-" Plugin 'zah/nim.vim'
-" Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'xuhdev/vim-latex-live-preview'
+	" Plugin 'zah/nim.vim'
+	" Plugin 'dart-lang/dart-vim-plugin'
+	Plugin 'vim-scripts/indentpython.vim'
+	" Plugin 'xuhdev/vim-latex-live-preview'
 
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'vim-syntastic/syntastic'
+	" Plugin 'Valloric/YouCompleteMe'
+	" Plugin 'vim-syntastic/syntastic'
 
-" Git additions
-Plugin 'tpope/vim-fugitive'
+	" Git additions
+	Plugin 'tpope/vim-fugitive'
 
-" Floobits
-" Plugin 'floobits/floobits-neovim'
+	" Floobits
+	" Plugin 'floobits/floobits-neovim'
 
-" Distraction free mode
-Plugin 'junegunn/goyo.vim'
+	" Distraction free mode
+	Plugin 'junegunn/goyo.vim'
 
-" Typescript
-Plugin 'Quramy/tsuquyomi'
-Plugin 'leafgarland/typescript-vim'
+	" Typescript
+	Plugin 'Quramy/tsuquyomi'
+	Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()
 filetype plugin indent on
 
-let python_highlight_all=1
+" This needs to be between these lines
+	let python_highlight_all=1
+
 syntax on
 
-" colorscheme codedark
-" colorscheme open-color
-" colorscheme Tomorrow
-" colorscheme oceandeep
-" colorscheme solarized
-colorscheme wal
+" ===== COLORSCHEME =====
+	" colorscheme codedark
+	" colorscheme open-color
+	" colorscheme Tomorrow
+	" colorscheme oceandeep
+	" colorscheme solarized
+	colorscheme wal
 
-set number relativenumber
-set nowrap
-set tabstop=4
-set shiftwidth=4
+" General settings
+	set number relativenumber
+	set nowrap
+	set tabstop=4
+	set shiftwidth=4
 
-set t_Co=256
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+	set t_Co=256
 
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>t :terminal<CR>
-nnoremap <leader>\| :Goyo<CR>
+" Pane moving
+	nmap <C-h> <C-w>h
+	nmap <C-j> <C-w>j
+	nmap <C-k> <C-w>k
+	nmap <C-l> <C-w>l
 
-autocmd FileType ejs set syntax=html
-autocmd FileType pl set syntax=prolog
+" Shortcuts
+	nnoremap <leader>n :NERDTreeToggle<CR>
+	nnoremap <leader>o :Vifm<CR>
+	nnoremap <leader>t :terminal<CR>
+	nnoremap <leader>\| :Goyo<CR>
 
-let g:ctrl_p_custom_ignore = 'node_modules'
+" Syntax for files
+	autocmd BufRead,BufNewFile ejs set syntax=html
+	autocmd BufRead,BufNewFile pl set syntax=prolog
+	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set syntax=groff
 
-let g:ale_lua_luacheck_options = '--globals love'
+" Ctrl-P ignore
+	let g:ctrl_p_custom_ignore = 'node_modules'
 
-let g:Tex_MultipleCompileFormats = 'pdf'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:livepreview_previewer = 'zathura'
+" Remove thousands of errors in lua files
+	let g:ale_lua_luacheck_options = '--globals love'
 
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
+" Tex Settings
+	let g:Tex_MultipleCompileFormats = 'pdf'
+	let g:Tex_DefaultTargetFormat = 'pdf'
+	let g:livepreview_previewer = 'zathura'
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+" Airline symbol config
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
 
-let g:tmuxline_powerline_separators = 1
+	let g:tmuxline_powerline_separators = 1
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
+	let g:airline_symbols.linenr = ''
 
+" Auto file commands
+	autocmd BufWritePost * %s/\s\+$//e
+
+" Navigation shortcuts
+	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+	map <Space><Tab> <Esc>/<++><Enter>"_c4l
+
+" Groff shortcuts
+	autocmd FileType nroff inoremap ,vec left [ pile {<Enter>  <++> above<Enter><++><Enter><Esc><<i} right ]<Esc>kk0i
+	autocmd FileType nroff inoremap ,mat left [ matrix {<Enter>  ccol { <++> above <++> }<Enter>ccol { <++> above <++> }<Enter><Esc><<i} right ]<Esc>kk0i

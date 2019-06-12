@@ -106,6 +106,7 @@ static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5
 static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
 static const char *brightupcmd[] = { "/bin/xbacklight", "+5%", NULL };
 static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
+static const char *lockcmd[] = { "slock", NULL };
 
 /*
 Mod+Shift+o spawn "/home/brendan/.scripts/scripts"
@@ -174,6 +175,7 @@ static Key keys[] = {
 	{ 0,							XF86XK_MonBrightnessDown, spawn, { .v = brightdowncmd } },
 
 	{ MODKEY|ShiftMask,				XK_z,	   spawn,		   { .v = laptopcmd } },
+	{ MODKEY,						XK_semicolon,	   spawn,		   { .v = lockcmd } },
 };
 
 /* button definitions */

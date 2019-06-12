@@ -54,6 +54,10 @@ vf() {
 	fzf | xargs -r $EDITOR
 }
 
+zf() {
+	cat <(find "$HOME/Dropbox/docs" -name '*.pdf') <(find "$HOME/Dropbox/docs" -name '*.ps') | fzf | xargs -r zathura ;
+}
+
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export QUTEWAL_DYNAMIC_LOADING=True
 
