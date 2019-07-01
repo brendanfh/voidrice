@@ -43,6 +43,9 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'Quramy/tsuquyomi'
 	Plugin 'leafgarland/typescript-vim'
 
+	" Emmet
+	Plugin 'mattn/emmet-vim'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -67,6 +70,9 @@ syntax on
 	set shiftwidth=4
 
 	set t_Co=256
+
+" Enable mouse clicking
+	set mouse=niv
 
 " Pane moving
 	nmap <C-h> <C-w>h

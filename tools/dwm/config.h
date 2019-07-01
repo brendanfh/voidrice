@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gap pixel between windows */
+static const unsigned int gappx     = 0;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "3", "4", "5", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -95,40 +95,66 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
+
 static const char *termcmd[]  = { "st", NULL };
 static const char *scriptscmd[] = { "/home/brendan/.scripts/scripts", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *notepadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "vim", "/home/brendan/.notes", NULL };
+
 static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle", NULL };
 static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
+
 static const char *brightupcmd[] = { "/bin/xbacklight", "+5%", NULL };
 static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
-static const char *lockcmd[] = { "slock", NULL };
 
-/*
-Mod+Shift+o spawn "/home/brendan/.scripts/scripts"
-XF86XK_AudioLowerVolume spawn "/usr/bin/pactl set-sink-volume 0 -5%"
-XF86XK_AudioRaiseVolume spawn "/usr/bin/pactl set-sink-volume 0 +5%"
+static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
+static const char *lockcmd[] = { "/home/brendan/.scripts/tools/lock", NULL };
 
-*/
+#define APP(cmd) { .v = (const char*[]) { cmd, NULL } }
+#define TERM(cmd) { .v = (const char*[]) { "st", "-e", cmd, NULL } }
 
 #include "selfrestart.c"
 #include "push.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY, 			            XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,				XK_o,	   spawn,          {.v = scriptscmd } },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.v = notepadcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	// SHORTCUTS
+	{ MODKEY,                       XK_space,  		spawn,          { .v = dmenucmd } },
+	{ MODKEY, 			            XK_Return, 		spawn,          { .v = termcmd } },
+	{ MODKEY,						XK_o,	   		spawn,          { .v = scriptscmd } },
+	{ MODKEY,                       XK_grave,  		togglescratch,  { .v = scratchpadcmd } },
+	{ MODKEY|ShiftMask,             XK_grave,  		togglescratch,  { .v = notepadcmd } },
+	{ MODKEY|ShiftMask,				XK_z,	   		spawn,		    { .v = laptopcmd } },
+	{ MODKEY,						XK_semicolon,	spawn,		    { .v = lockcmd } },
+	{ MODKEY,                       XK_F1,     		spawn,          APP("qutebrowser") },
+	{ MODKEY,                       XK_F2,     		spawn,          APP("spotify") },
+	{ MODKEY,                       XK_F3,     		spawn,          APP("Discord") },
+	{ MODKEY,                       XK_F4,     		spawn,          APP("slack") },
+	{ MODKEY,                       XK_F7,     		spawn,			TERM("calcurse") },
+	{ MODKEY,                       XK_F8,     		spawn,			TERM("/home/brendan/.config/vifm/scripts/vifmrun") },
+	{ MODKEY,                       XK_F9,     		spawn,			TERM("ncpamixer") },
+	{ MODKEY,                       XK_F10,    		spawn,			TERM("htop") },
+
+	// MOVEMENT
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+
+	// LAYOUT
+	{ MODKEY|ControlMask,			XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,			XK_period, cyclelayout,    {.i = +1 } },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
+//  { MODKEY,                       XK_h,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                       XK_p,      setlayout,      {0} },
+
+	// STACK MODIFY
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -137,23 +163,22 @@ static Key keys[] = {
 	{ MODKEY|ControlMask, 			XK_j,      pushdown,       {0} },
 	{ MODKEY|ControlMask,           XK_k,      pushup,         {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY, 			            XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-	// { MODKEY,                       XK_h,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY|ControlMask,			XK_comma,  cyclelayout,    {.i = -1 } },
-	{ MODKEY|ControlMask,			XK_period, cyclelayout,    {.i = +1 } },
-	{ MODKEY,                       XK_p,      setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+	// WINDOW MANAGE
+	{ MODKEY, 			            XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+
+	// DWM CONTROL
+	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
+	{ MODKEY,                       XK_b,      togglebar,      {0} },
+    { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	// TAGKEYS
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -163,19 +188,14 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
-	// Special keys
+	// SPECIAL KEYS
 	{ 0,							XF86XK_AudioLowerVolume, spawn, { .v = downvolcmd } },
 	{ 0,							XF86XK_AudioMute, spawn, { .v = mutecmd } },
 	{ 0,							XF86XK_AudioRaiseVolume, spawn, { .v = upvolcmd } },
 
 	{ 0,							XF86XK_MonBrightnessUp, spawn, { .v = brightupcmd } },
 	{ 0,							XF86XK_MonBrightnessDown, spawn, { .v = brightdowncmd } },
-
-	{ MODKEY|ShiftMask,				XK_z,	   spawn,		   { .v = laptopcmd } },
-	{ MODKEY,						XK_semicolon,	   spawn,		   { .v = lockcmd } },
 };
 
 /* button definitions */

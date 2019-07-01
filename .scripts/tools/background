@@ -10,5 +10,7 @@ wallpaper="$( \
 )"
 [ -z "$wallpaper" ] && exit 1
 
-/home/brendan/.scripts/utils/set_background "$wallpaper" "$wallpaper"
+theme="$(echo -e 'Dark\nLight' | dmenu -n -i -l 2 -p "Select theme: " | tr '[:upper:]' '[:lower:]')"
+
+THEME="$theme" /home/brendan/.scripts/utils/set_background "$wallpaper" "$wallpaper"
 

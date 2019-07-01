@@ -5,6 +5,10 @@
 	/home/brendan/
 	..
 1559933472
+'a
+	/home/brendan/.scripts/tools
+	..
+1561661485
 'b
 	/home/brendan/bin/
 	..
@@ -38,306 +42,306 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/brendan/.var/app/com.slack.Slack/config/ibus
-	..
-0
-d/home/brendan/.var/app/com.slack.Slack/config
-	pulse
-3
-d/home/brendan/.var/app/com.slack.Slack/config/pulse
-	cookie
+d/home/brendan/Dropbox
+	DSU
 1
-d/home/brendan/.var/app/com.slack.Slack/config
-	ibus
-2
-d/home/brendan/.var/app/com.slack.Slack/config/ibus
-	bus
-1
-d/home/brendan/.var/app/com.slack.Slack/config/ibus/bus
-	..
-0
-d/home/brendan/.var/app/com.slack.Slack/config/ibus
-	bus
-1
-d/home/brendan/.var/app/com.slack.Slack/config
-	Slack
-1
-d/home/brendan/.var/app/com.slack.Slack/config/Slack
-	GPUCache
-2
-d/home/brendan/.var/app/com.slack.Slack/config
-	Slack
-1
-d/home/brendan/.var/app/com.slack.Slack
-	config
-3
-d/home/brendan/.var/app
-	com.slack.Slack
-1
-d/home/brendan/.var
-	app
-1
-d/home/brendan
-	.var
-32
-d/home/brendan/.var
-	app
-1
-d/home/brendan/.var/app
-	com.slack.Slack
-1
-d/home/brendan/.var
-	app
-1
-d/home/brendan
-	.var
-32
-d/home/brendan/.var
-	app
-1
-d/home/brendan/.var/app
-	com.slack.Slack
-1
-d/home/brendan/.var
-	app
-1
-d/home/brendan/.var/app
-	..
-0
-d/home/brendan/.var
-	app
-1
-d/home/brendan
-	.vim
-33
-d/home/brendan/.vim
-	bundle
-1
-d/home/brendan/.vim/bundle
-	Vundle.vim
-1
-d/home/brendan/.vim
-	bundle
-1
-d/home/brendan
-	.vscode-oss
-33
-d/home/brendan/.vscode-oss
-	extensions
-1
-d/home/brendan/.vscode-oss/extensions
-	..
-0
-d/home/brendan/.vscode-oss
-	extensions
-1
-d/home/brendan
-	.w3m
-33
-d/home/brendan/.w3m
-	history
-2
-d/home/brendan
-	Documents
-32
-d/home/brendan/Documents
-	test.mom
+d/home/brendan/Dropbox/DSU
+	CSC410
+4
+d/home/brendan/Dropbox/DSU/CSC410
+	ExamPart3.pdf
 8
+d/home/brendan/Dropbox/DSU
+	CSC456
+5
+d/home/brendan/Dropbox/DSU/CSC456
+	tls.pdf
+20
+d/home/brendan/Dropbox/DSU
+	CSC466
+6
+d/home/brendan/Dropbox/DSU/CSC466
+	A3
+1
+d/home/brendan/Dropbox/DSU/CSC466/A3
+	a3v3.l
+3
+d/home/brendan/Dropbox/DSU/CSC466
+	A6
+2
+d/home/brendan/Dropbox/DSU/CSC466/A6
+	a6Type.txt
+1
+d/home/brendan/Dropbox/DSU/CSC466
+	E1
+3
+d/home/brendan/Dropbox/DSU
+	CSC482
+7
+d/home/brendan/Dropbox/DSU/CSC482
+	paper
+1
+d/home/brendan/Dropbox/DSU/CSC482/paper
+	sieves.pdf
+6
+d/home/brendan/Dropbox/DSU/CSC482
+	1122.cpp
+2
+d/home/brendan/Dropbox/DSU
+	CSC482
+7
+d/home/brendan/Dropbox/DSU/CSC482
+	1122.cpp
+2
+d/home/brendan/Dropbox/DSU
+	MATH315
+8
+d/home/brendan/Dropbox/DSU/MATH315
+	Math 315 Homework 4.pdf
+9
+d/home/brendan/Dropbox/DSU
+	progclub
+13
+d/home/brendan/Dropbox/DSU/progclub
+	luagame
+1
+d/home/brendan/Dropbox/DSU/progclub/luagame
+	conf.lua
+1
+d/home/brendan/Dropbox/DSU/progclub
+	luagame
+1
+d/home/brendan
+	.local
+4
+d/home/brendan/.local
+	share
+3
+d/home/brendan/.local/share
+	vifm
+21
+d/home/brendan/.local/share/vifm
+	Trash
+1
+d/home/brendan/.local/share/vifm/Trash
+	000_bar
+1
+d/home/brendan/.local/share/vifm
+	Trash
+1
+d/home/brendan/.local/share
+	vifm
+21
+d/home/brendan/.local/share/vifm
+	Trash
+1
+d/home/brendan/.local/share/vifm/Trash
+	000_tools
+4
+d/home/brendan/.local/share/vifm
+	Trash
+1
+d/home/brendan/.local/share
+	vifm
+21
+d/home/brendan/.local
+	share
+3
+d/home/brendan
+	.local
+4
+d/home/brendan/.local
+	bin
+1
+d/home/brendan/.local/bin
+	isort
+1
+d/home/brendan/.local
+	bin
+1
 d/home/brendan
 	Desktop
-31
-d/home/brendan/Desktop
-	steam.desktop
+1
+d/home/brendan/Dropbox/dev/brendanfh_py
+	website
+1
+d/home/brendan/Dropbox/dev/brendanfh_py/website
+	app
+1
+d/home/brendan/Dropbox/dev/brendanfh_py/website/app
+	routes.py
+7
+d/home/brendan
+	MidProgram - Speed Mentoring 2019 Invite to Interns.docx
+13
+d/home/brendan/Dropbox/dev/py/musicapp
+	config
+1
+d/home/brendan/Dropbox/dev/py/musicapp/config
+	devel.py
+3
+d/home/brendan/Dropbox/dev/py/musicapp
+	server
+2
+d/home/brendan/Dropbox/dev/py/musicapp/server
+	controllers
+2
+d/home/brendan/Dropbox/dev/py/musicapp/server/controllers
+	__pycache__
+1
+d/home/brendan/Dropbox/dev/py/musicapp/server
+	controllers
+2
+d/home/brendan/Dropbox/dev/py/musicapp
+	server
+2
+d/home/brendan/Dropbox/dev/c/ttyfps
+	main.c
+3
+d/home/brendan/.scripts
+	tools
+4
+d/home/brendan/.scripts/tools
+	theme
+14
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/Dropbox
+	DSU
+1
+d/home/brendan/Dropbox/DSU
+	CIS484
+2
+d/home/brendan/Dropbox/DSU/CIS484
+	assignment4.txt
+22
+d/home/brendan/Dropbox/DSU
+	CSC482
+7
+d/home/brendan/Dropbox/DSU/CSC482
+	paper
+1
+d/home/brendan/Dropbox/DSU/CSC482/paper
+	sieves.synctex.gz
+7
+d/home/brendan/Dropbox/DSU/CSC482
+	CSC482D01FA18Syllabus.docx
+4
+d/home/brendan/Dropbox/DSU
+	Brendan Hansen - Resume.pdf
+15
+d/home/brendan/Dropbox
+	DSU
+1
+d/home/brendan
+	Dropbox
+4
+d/home/brendan/Dropbox
+	docs
+8
+d/home/brendan/Dropbox/docs
+	resume
+5
+d/home/brendan/Dropbox/docs/resume
+	resume.ms
 1
 d/home/brendan
 	Documents
-32
+2
 d/home/brendan/Documents
-	test.ms
-9
+	test.pdf
+10
 d/home/brendan
-	Downloads
-33
-d/home/brendan/Downloads
-	Win10_1903_V1_English_x64.iso
-4
+	Documents
+2
+d/home
+	brendan
+1
 d/home/brendan
 	Dropbox
-33
+4
 d/home/brendan/Dropbox
-	SP19COMP.zip
+	docs
+8
+d/home/brendan/Dropbox/docs
+	shell
+7
+d/home/brendan/Dropbox/docs/shell
+	bash_lnfw_2017.pdf
+1
+d/home/brendan/Dropbox/docs
+	shell
+7
+d/home/brendan/Dropbox/docs/shell
+	groff.pdf
+4
+d/home/brendan/Dropbox/docs
+	school
+6
+d/home/brendan/Dropbox/docs/school
+	DS_SessionSchedule.pdf
+3
+d/home/brendan/Dropbox/docs
+	resume
+5
+d/home/brendan/Dropbox/docs/resume
+	resume.pdf
+2
+d/home/brendan/Dropbox/docs
+	prog
+4
+d/home/brendan/Dropbox/docs/prog
+	javascript_tutorial.pdf
+5
+d/home/brendan/Dropbox/docs
+	prog
+4
+d/home/brendan/Dropbox/docs/prog
+	javascript_tutorial.pdf
+5
+d/home/brendan/Dropbox/docs
+	ml
+3
+d/home/brendan/Dropbox/docs/ml
+	dqn.pdf
+5
+d/home/brendan/Dropbox/docs
+	misc
+2
+d/home/brendan/Dropbox/docs/misc
+	quikscript.pdf
+4
+d/home/brendan/Dropbox/docs
+	math
+1
+d/home/brendan/Dropbox/docs/math
+	tensors_8.pdf
 12
-d/home/brendan
-	tmp
-33
-d/home/brendan/tmp
-	source-code-pro-2.030R-ro-1.050R-it.zip
-9
-d/home/brendan
-	tools
-33
-d/home/brendan/tools
-	dmenu
+d/home/brendan/Dropbox/docs
+	math
 1
+d/home/brendan/Dropbox
+	docs
+8
 d/home/brendan
-	Pictures
-6
-d/home/brendan/Pictures
-	wallpapers
-1
-d/home/brendan/Pictures/wallpapers
-	Landscapes
-5
-d/home/brendan/Pictures/wallpapers/Landscapes
-	landscape_40.jpg
-33
-d/home/brendan/tools/slock
-	slock.c
-13
-d/home/brendan
-	Pictures
-6
-d/home/brendan/Pictures
-	wallpapers
-1
-d/home/brendan/Pictures/wallpapers
-	Landscapes
-5
-d/home/brendan/Pictures/wallpapers/Landscapes
-	landscape_32.jpg
-24
-d/home/brendan
-	Pictures
-6
+	Dropbox
+4
 d/home
 	brendan
 1
 d/
-	sys
-17
-d/sys
-	class
-3
-d/sys/class
-	input
-22
-d/sys/class/input
-	event0
+	mnt
+10
+d/mnt
+	sd
 1
-d/sys/class
-	pci_bus
-23
-d/sys/class/pci_bus
-	0000:00
-1
-d/sys/class/pci_bus/0000:00
-	..
-0
-d/sys/class/pci_bus
-	0000:00
-1
-d/sys/class
-	thermal
-24
-d/sys/class/thermal
-	cooling_device0
-1
-d/sys/class/thermal/cooling_device0
-	device
-1
-d/sys/class/thermal
-	cooling_device0
-1
-d/sys/class
-	hwmon
-5
-d/sys/class/hwmon
-	hwmon0
-1
-d/sys/class/hwmon/hwmon0
-	device
-1
-d/sys/class/hwmon
-	hwmon0
-1
-d/sys/class
-	graphics
-4
-d/sys/class/graphics
-	..
-0
-d/sys/class
-	leds
-22
-d/sys/class/leds
-	tpacpi::kbd_backlight
-5
-d/sys/class/leds/tpacpi::kbd_backlight
-	brightness
-4
-d/home/brendan
-	Dropbox
-4
-d/home/brendan/Dropbox
-	dev
-7
-d/home/brendan/Dropbox/dev
-	brendanfh_py
-3
-d/home/brendan/Dropbox/dev/brendanfh_py
-	website
-1
-d/home/brendan/Dropbox/dev/brendanfh_py/website
-	app
-1
-d/home/brendan/Dropbox/dev/brendanfh_py/website/app
-	templates
-3
-d/home/brendan/Dropbox/dev/brendanfh_py/website/app/templates
-	index.html
+d/mnt/sd
+	a.out
 2
-d/home/brendan/Dropbox/dev/brendanfh_py/website/app
-	templates
-3
-d/home/brendan/Dropbox/dev/brendanfh_py/website
-	app
-1
-d/home/brendan/Dropbox/dev/brendanfh_py
-	website
-1
-d/home/brendan/Dropbox/dev
-	js
-12
-d/home/brendan/Dropbox/dev/js
-	kbb
-6
-d/home/brendan/Dropbox/dev
-	js
-12
-d/home/brendan/Dropbox
-	dev
-7
 d/home/brendan
-	Pictures
-6
-d/home/brendan/Pictures
-	wallpapers
-1
-d/home/brendan/Pictures/wallpapers
-	Titans
-8
-d/home/brendan/Pictures/wallpapers/Titans
-	-1743838800.jpg
-1
-d/home/brendan/Pictures/wallpapers
-	Landscapes
-5
-d/home/brendan/Pictures/wallpapers/Landscapes
-	landscape_32.jpg
-24
-d/home/brendan
-	Pictures
-6
+	test.py
+13
 d
 
 # Right window history (oldest to newest):
@@ -354,16 +358,115 @@ D/home/brendan/Dropbox/DSU/CIS484
 	assignment2-brendan-hansen.pdf
 21
 D/home/brendan
+	Dropbox
+4
+D/home/brendan/Dropbox
+	docs
+8
+D/home/brendan/Dropbox/docs
+	math
+2
+D/home/brendan/Dropbox/docs/math
 	..
 0
+D/home/brendan/Dropbox/docs
+	math
+2
+D/home/brendan/Dropbox/docs/math
+	..
+0
+D/home/brendan/Dropbox/docs
+	ml
+3
+D/home/brendan/Dropbox/docs/ml
+	..
+0
+D/home/brendan/Dropbox/docs
+	prog
+4
+D/home/brendan/Dropbox/docs/prog
+	..
+0
+D/home/brendan/Dropbox/docs
+	prog
+4
+D/home/brendan/Dropbox
+	docs
+8
+D/home/brendan/Dropbox/docs
+	prog
+4
+D/home/brendan/Dropbox/docs/prog
+	..
+0
+D/home/brendan/Dropbox/docs
+	shell
+6
+D/home/brendan/Dropbox/docs/shell
+	..
+0
+D/home/brendan/Dropbox/docs
+	school
+6
+D/home/brendan/Dropbox/docs/school
+	..
+0
+D/home/brendan/Dropbox/docs
+	school
+7
+D/home/brendan/Dropbox/docs/school
+	..
+0
+D/home/brendan/Dropbox/docs
+	math
+1
+D/home/brendan/Dropbox/docs/math
+	Chapter 24 - Discrete Mathematics.pdf
+1
+D/home/brendan/Dropbox/docs
+	math
+1
+D/home/brendan/Dropbox
+	docs
+8
+D/home/brendan/Dropbox/docs
+	math
+1
+D/home/brendan/Dropbox/docs/math
+	Chapter 24 - Discrete Mathematics.pdf
+1
+D/home/brendan/Dropbox/docs
+	prog
+4
+D/home/brendan/Dropbox/docs/prog
+	elm-tutorial-en.pdf
+3
+D/home/brendan/Dropbox/docs
+	math
+1
+D/home/brendan/Dropbox
+	docs
+8
+D/home/brendan
+	Dropbox
+4
+D/home/brendan/Dropbox
+	dev
+7
+D/home/brendan/Dropbox/DSU
+	CIS484
+2
+D/home/brendan/Dropbox/DSU/CIS484
+	assignment4.txt
+22
 D
 
 # Command line history (oldest to newest):
+:!touch luke.vifm
 :!groff -ms -Tpdf % | zathura -
 :!groff -ms -Tpdf %f | zathura -
 :view
 :marks
-:!sxiv %d
 :colorscheme
 :wq
 :qall
@@ -373,13 +476,56 @@ D
 :wqa
 :tree
 :q:q
+:!groff -e -ms -Tpdf % | zathura -
+:!groff -e -ms -Tpdf %f | zathura -
+:!groff -e -mom -Tpdf %f | zathura -
+:!touch refresh_background
+:!chmod +x %f
+:!touch vpscreds
+:!mkdir sheets
+:mkcd math
+:mkcd ml
+:mkcd prog
+:mkcd shell
+:mkcd school
+:mkcd misc
+:!sxiv .
+:!notify-send %f
+:!notify-send %F
+:!notify-send %d
+:!notify-send %d/%f
+:!set_background %d/%f
+:!sxiv %d
+:shell
+:move
+:move views
+:!shell mv templates/ views/
+:!mv templates/ views/
+:mkcd controllers
+:mkcd models
+:!touch __init__.py
+:!touch base_controller.py
+:!touch home_controller.py
+:!touch theme
+:!scim %f
 :q
+:!%f
+:!%d/%f
 
 # Search history (oldest to newest):
+/3\.
+/.sc
 /sort.cl
-/.local
 /.scre
 /.cache
+/.local
+/tr
+/vifm
+/.scripts
+/antl
+/4.
+/\.local
+/vif
 
 # Prompt history (oldest to newest):
 plaptop_big.sh
@@ -389,7 +535,7 @@ plaptop
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/brendan/.local/share/vifm/Trash/000_.lyrics
+""/home/brendan/.local/share/vifm/Trash/000_gitlab-icon-1-color-black-rgb.svg
 
 # Directory stack (oldest to newest):
 
@@ -464,6 +610,56 @@ t/home/brendan/.local/share/vifm/Trash/000_test.ms
 	/home/brendan/test.ms
 t/home/brendan/.local/share/vifm/Trash/000_.lyrics
 	/home/brendan/.lyrics
+t/home/brendan/.local/share/vifm/Trash/000_Sterling Talent Solutions.html
+	/home/brendan/Dropbox/docs/Sterling Talent Solutions.html
+t/home/brendan/.local/share/vifm/Trash/000_Sterling Talent Solutions_files
+	/home/brendan/Dropbox/docs/Sterling Talent Solutions_files
+t/home/brendan/.local/share/vifm/Trash/000_Unofficial Transcript.png
+	/home/brendan/Dropbox/Unofficial Transcript.png
+t/home/brendan/.local/share/vifm/Trash/000_arch-retro-dark.xcf
+	/home/brendan/Dropbox/Pictures/arch-retro-dark.xcf
+t/home/brendan/.local/share/vifm/Trash/000_Oracle-12c-SQL-3rd-Edition-Pdf-Download.pdf
+	/home/brendan/Dropbox/DSU/CIS484/Oracle-12c-SQL-3rd-Edition-Pdf-Download.pdf
+t/home/brendan/.local/share/vifm/Trash/000_2019-06-14-181421_1140x149_scrot.png
+	/home/brendan/2019-06-14-181421_1140x149_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_2019-06-14-181502_1161x127_scrot.png
+	/home/brendan/2019-06-14-181502_1161x127_scrot.png
+t/home/brendan/.local/share/vifm/Trash/000_assignment4.txt
+	/home/brendan/assignment4.txt
+t/home/brendan/.local/share/vifm/Trash/000_pictures
+	/home/brendan/.local/bin/pictures
+t/home/brendan/.local/share/vifm/Trash/000_random
+	/home/brendan/.local/bin/random
+t/home/brendan/.local/share/vifm/Trash/000_tools
+	/home/brendan/.local/bin/tools
+t/home/brendan/.local/share/vifm/Trash/000_utils
+	/home/brendan/.local/bin/utils
+t/home/brendan/.local/share/vifm/Trash/000_scripts
+	/home/brendan/.local/bin/scripts
+t/home/brendan/.local/share/vifm/Trash/000_bar
+	/home/brendan/.local/bin/bar
+t/home/brendan/.local/share/vifm/Trash/000_all-of-me.pdf
+	/home/brendan/all-of-me.pdf
+t/home/brendan/.local/share/vifm/Trash/000_3901-conference-room-map-nov2018.pdf
+	/home/brendan/3901-conference-room-map-nov2018.pdf
+t/home/brendan/.local/share/vifm/Trash/000_app.css
+	/home/brendan/Dropbox/dev/brendanfh_py/website/app/static/css/app.css
+t/home/brendan/.local/share/vifm/Trash/000_base_controller.py
+	/home/brendan/Dropbox/dev/brendanfh_py/website/app/controllers/base_controller.py
+t/home/brendan/.local/share/vifm/Trash/000_a.out
+	/home/brendan/a.out
+t/home/brendan/.local/share/vifm/Trash/000_golf.c
+	/home/brendan/golf.c
+t/home/brendan/.local/share/vifm/Trash/000_Agenda - Mid Program Intern Event.docx
+	/home/brendan/Agenda - Mid Program Intern Event.docx
+t/home/brendan/.local/share/vifm/Trash/000_0619 Leader Bios.pdf.pdf
+	/home/brendan/0619 Leader Bios.pdf.pdf
+t/home/brendan/.local/share/vifm/Trash/000_MidProgram - Speed Mentoring 2019 Invite to Interns.docx
+	/home/brendan/MidProgram - Speed Mentoring 2019 Invite to Interns.docx
+t/home/brendan/.local/share/vifm/Trash/000_2019-payroll-calendar-2.pdf
+	/home/brendan/2019-payroll-calendar-2.pdf
+t/home/brendan/.local/share/vifm/Trash/000_gitlab-icon-1-color-black-rgb.svg
+	/home/brendan/gitlab-icon-1-color-black-rgb.svg
 
 # State:
 f

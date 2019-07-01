@@ -1,7 +1,8 @@
-#!/bin/sh
-ICON=$HOME/.scripts/pictures/lock.png
-TMPBG=/tmp/screen.png
-scrot $TMPBG
-convert $TMPBG -scale 2% -scale 5000% $TMPBG
-convert "$TMPBG" "$ICON" -gravity center -composite -matte $TMPBG
-i3lock -f -c 000000 -i $TMPBG
+#!/bin/bash
+# ICON=$HOME/.scripts/pictures/lock.png
+# TMPBG=/tmp/screen.png
+# scrot $TMPBG
+# convert $TMPBG -scale 2% -scale 5000% $TMPBG
+# convert "$TMPBG" "$ICON" -gravity center -composite -matte $TMPBG
+# i3lock -f -c 000000 -i $TMPBG
+slock -m "$(echo -e "$(figlet Locked)\n         Enter password")"

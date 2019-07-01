@@ -18,4 +18,4 @@ static const char * message = "Brendan Hansen's Void Linux";
 static const char * text_color = "#ffffff";
 
 /* text size (must be a valid size) */
-static const char * text_size = "6x10";
+static const char * text_size = "10x20";

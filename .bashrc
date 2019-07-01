@@ -22,6 +22,7 @@ LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 export EDITOR='nvim'
 export BROWSER='firefox'
 export TERMINAL='st'
+export TODO_FILE_LOC="$HOME/.todolist"
 
 #export PATH=~/.nimble/bin:$PATH
 #export PATH=~/tools/wabt/out/gcc/Release:$PATH
