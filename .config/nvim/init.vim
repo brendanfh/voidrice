@@ -9,8 +9,9 @@ Plugin 'VundleVim/Vundle.vim'
 	" Useful utilities
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'vifm/vifm.vim'
-	Plugin 'w0rp/ale'
+	" Plugin 'w0rp/ale'
 	Plugin 'kien/ctrlp.vim'
+	Plugin 'neoclide/coc.nvim'
 
 	" Themeing
 	Plugin 'vim-airline/vim-airline'
@@ -27,11 +28,12 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'vim-scripts/indentpython.vim'
 	" Plugin 'xuhdev/vim-latex-live-preview'
 
-	" Plugin 'Valloric/YouCompleteMe'
+	Plugin 'Valloric/YouCompleteMe'
 	" Plugin 'vim-syntastic/syntastic'
 
 	" Git additions
 	Plugin 'tpope/vim-fugitive'
+	Plugin 'airblade/vim-gitgutter'
 
 	" Floobits
 	" Plugin 'floobits/floobits-neovim'
@@ -42,9 +44,17 @@ Plugin 'VundleVim/Vundle.vim'
 	" Typescript
 	Plugin 'Quramy/tsuquyomi'
 	Plugin 'leafgarland/typescript-vim'
+	Plugin 'ianks/vim-tsx'
+	" Plugin 'neoclide/coc-tsserver'
+
+	" Python
+	Plugin 'neoclide/coc-python'
 
 	" Emmet
 	Plugin 'mattn/emmet-vim'
+
+	" Docker
+	Plugin 'kevinhui/vim-docker-tools'
 
 
 call vundle#end()
@@ -85,6 +95,8 @@ syntax on
 	nnoremap <leader>o :Vifm<CR>
 	nnoremap <leader>t :terminal<CR>
 	nnoremap <leader>\| :Goyo<CR>
+	nnoremap <leader>d :DockerToolsToggle<CR>
+	nnoremap <leader>g :Git<CR>
 
 " Syntax for files
 	autocmd BufRead,BufNewFile ejs set syntax=html
@@ -121,10 +133,26 @@ syntax on
 	autocmd BufWritePost * %s/\s\+$//e
 
 " Navigation shortcuts
-	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	map <Space><Tab> <Esc>/<++><Enter>"_c4l
+	" inoremap <Tab><Space> <Esc>/<++><Enter>"_c4l
+	" vnoremap <Tab><Space> <Esc>/<++><Enter>"_c4l
+	" map <Tab><Space> <Esc>/<++><Enter>"_c4l
 
 " Groff shortcuts
 	autocmd FileType nroff inoremap ,vec left [ pile {<Enter>  <++> above<Enter><++><Enter><Esc><<i} right ]<Esc>kk0i
 	autocmd FileType nroff inoremap ,mat left [ matrix {<Enter>  ccol { <++> above <++> }<Enter>ccol { <++> above <++> }<Enter><Esc><<i} right ]<Esc>kk0i
+
+" Coc extensions
+	" CocInstall coc-tsserver
+
+" YCM
+	let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+" Tmuxline Conf
+	let g:tmuxline_preset = {
+		\'a': '#S',
+		\'b': ['#h', '#(whoami)', '#(uptime | cut -d" " -f 4 | tr -d ",")'],
+		\'win': ['#I', '#W'],
+		\'cwin': ['#I', '#W'],
+		\'y': ['#(free --si -h | awk ''/Mem:/ { print $3 }'')', '#(acpi | awk -F "[ ,]" ''{ print $5 " " $7 }'')', '#(date "+%d %b %Y")'],
+		\'z': '#(date "+%H:%M")' }
+

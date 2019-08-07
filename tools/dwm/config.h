@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -85,6 +85,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
 	"dmenu_run",
+	"-i",
 	"-l", "10",
 	"-p", "Run Program:",
 	"-m", dmenumon,
@@ -96,7 +97,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "/home/brendan/.scripts/utils/tmux_launch", NULL };
 static const char *scriptscmd[] = { "/home/brendan/.scripts/scripts", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -128,7 +129,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_grave,  		togglescratch,  { .v = notepadcmd } },
 	{ MODKEY|ShiftMask,				XK_z,	   		spawn,		    { .v = laptopcmd } },
 	{ MODKEY,						XK_semicolon,	spawn,		    { .v = lockcmd } },
-	{ MODKEY,                       XK_F1,     		spawn,          APP("qutebrowser") },
+	{ MODKEY,                       XK_F1,     		spawn,          APP("chromium") },
 	{ MODKEY,                       XK_F2,     		spawn,          APP("spotify") },
 	{ MODKEY,                       XK_F3,     		spawn,          APP("Discord") },
 	{ MODKEY,                       XK_F4,     		spawn,          APP("slack") },

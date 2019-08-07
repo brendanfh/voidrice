@@ -19,21 +19,30 @@ set -o vi
 
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
+# Various global settings
 export EDITOR='nvim'
 export BROWSER='firefox'
 export TERMINAL='st'
-export TODO_FILE_LOC="$HOME/.todolist"
 
+# Path extensions
 #export PATH=~/.nimble/bin:$PATH
 #export PATH=~/tools/wabt/out/gcc/Release:$PATH
 export PATH="/home/brendan/.yarn/bin:$PATH"
 #export PATH=~/.pub-cache/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts/utils:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.shortcuts
 
+# Program aliases
 alias ls='ls --color=auto'
 alias l="ls -hN -al --group-directories-first"
+alias v="$EDITOR"
+alias r="ranger"
+alias f="$HOME/.config/vifm/scripts/vifmrun"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
+
+# Utility aliases
 alias cl="clear; ls -lh"
 alias md="mkdir -p"
 alias SS="sudo sv"
@@ -41,12 +50,18 @@ alias xi="sudo xbps-install"
 alias xq="xbps-query -R -s"
 alias ccat="highlight --out-format=ansi"
 alias oof="sudo"
-alias v="$EDITOR"
-alias r="ranger"
-alias f="$HOME/.config/vifm/scripts/vifmrun"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
+# Tmux aliases
+alias ta="tmux a -t"
+alias tn="tmux new-session -s"
+alias tk="tmux kill-session -t"
+alias tl="tmux list-sessions"
 
+# Various program settings
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export QUTEWAL_DYNAMIC_LOADING=True
+
+# Utility functions
 m() {
 	man -k "^$@$" >/dev/null && man -Tpdf "$@" | zathura - ;
 }
@@ -56,26 +71,18 @@ vf() {
 }
 
 zf() {
-	cat <(find "$HOME/Dropbox/docs" -name '*.pdf') <(find "$HOME/Dropbox/docs" -name '*.ps') | fzf | xargs -r zathura ;
+	cat \
+		<(find "$HOME/Dropbox/docs" -name '*.pdf') \
+		<(find "$HOME/Dropbox/docs" -name '*.ps') \
+		| fzf \
+		| xargs -r zathura ;
 }
 
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export QUTEWAL_DYNAMIC_LOADING=True
-
+# Load wal colors to be used by some scripts
 . /home/brendan/.cache/wal/colors.sh
 
-# neofetch
+# Print a nice display when the session starts
 ufetch
 
-# function _update_ps1() {
-# 	PS1=$(/home/brendan/.local/bin/powerline-shell $?)
-# }
-# 
-# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-# 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-# fi
-
-
-# Old PS1s
-# PS1='[\u@\h \W]\$ '
+# Set PS1 for a pretty(er) terminal
 export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[34m\]\u\[$(tput sgr0)\]\[\033[37m\]@\[$(tput sgr0)\]\[\033[34m\]\h\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[31m\]\$?\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[32m\]\W\[$(tput sgr0)\]\[\033[37m\]]\[$(tput sgr0)\]\\n\\$\[$(tput sgr0)\] "

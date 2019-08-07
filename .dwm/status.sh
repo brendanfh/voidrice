@@ -62,7 +62,7 @@ battery() {
 }
 
 datetime() {
-	date '+ %A, %b %d \x02  %H:%M:%S'
+	date '+ %a %b %d \x02  %H:%M:%S'
 }
 
 while true; do
