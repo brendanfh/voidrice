@@ -1,11 +1,13 @@
 #!/bin/sh
 
+trap 'update' 5
+
 volume() {
 	volstat="$(pamixer --sink 0 --get-volume-human)"
 	volicon=""
 	volcol="\x02"
 	[ "$volstat" = "muted" ] && volicon="" && volcol="\x04"
-	echo "$volcol $volicon $volstat"
+	echo "  $volicon $volstat $volcol"
 }
 
 temp() {
@@ -16,7 +18,7 @@ temp() {
 		tempcolor="\x04" ;
 	fi
 
-	echo "$tempcolor  $temp°C"
+	echo "  $temp°C $tempcolor"
 }
 
 cpu() {
@@ -58,16 +60,21 @@ battery() {
 
 	$(echo "$acpiout" | grep -qi " charging") && battery_color='\x01'
 
-	echo "${battery_color} ${battery_icon} ${battery_perc}%"
+	echo " ${battery_icon} ${battery_perc}% ${battery_color}"
 }
 
 datetime() {
-	date '+ %a %b %d \x02  %H:%M:%S'
+	date '+ %a %b %d \x03  %H:%M'
+}
+
+update() {
+	stat="$(volume) $(temp)   $(cpu) \x02  $(memory) \x03 $(battery) $(datetime)\x02"
+	# Use the bash echo
+	xsetroot -name "$(/bin/echo -en "$stat")"
 }
 
 while true; do
-	stat="$(volume) $(temp) \x02  $(cpu) \x03  $(memory) $(battery) \x03 $(datetime) "
-	# Use the bash echo
-	xsetroot -name "$(/bin/echo -en "$stat")"
-	sleep 1;
+	update ;
+	sleep 2s &
+	wait
 done

@@ -3,6 +3,7 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
+# If on TTY1, start xserver and dwm
 if [ "$(tty)" == "/dev/tty1" ]; then
 	pgrep dwm || exec startx ;
 fi
@@ -49,5 +50,3 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 setfont -24 /usr/share/consolefonts/ter-powerline-v24n.psf.gz
-
-export PATH="$HOME/.cargo/bin:$PATH"

@@ -6,6 +6,7 @@ static const unsigned int gappx     = 0;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int ulpad				= 8; 		/* underline padding */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
@@ -22,9 +23,9 @@ static char selfgcolor[]      = "#eeeeee";
 static char warnbordercolor[]  = "#005577";
 static char warnbgcolor[]      = "#005577";
 static char warnfgcolor[]      = "#eeeeee";
-static char urgentbordercolor[]  = "#ff0000";
-static char urgentbgcolor[]      = "#330000";
-static char urgentfgcolor[]      = "#ff4444";
+static char urgentbordercolor[]  = "#330000";
+static char urgentbgcolor[]      = "#ff0000";
+static char urgentfgcolor[]      = "#ff9999";
 
 static const char *colors[][3]      = {
 	/*               fg               bg             border   */
@@ -97,15 +98,16 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-static const char *termcmd[]  = { "/home/brendan/.scripts/utils/tmux_launch", NULL };
+static const char *termcmd[]  = { "st", NULL };
+static const char *tmuxcmd[]  = { "/home/brendan/.scripts/utils/tmux_launch", NULL };
 static const char *scriptscmd[] = { "/home/brendan/.scripts/scripts", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *notepadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "vim", "/home/brendan/.notes", NULL };
 
-static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
-static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle", NULL };
-static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%" };
+static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle" };
+static const char *upvolcmd[] 	= { "/usr/bin/pactl", "set-sink-volume", "0", "+5%" };
 
 static const char *brightupcmd[] = { "/bin/xbacklight", "+5%", NULL };
 static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
@@ -123,6 +125,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	// SHORTCUTS
 	{ MODKEY,                       XK_space,  		spawn,          { .v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          { .v = tmuxcmd } },
 	{ MODKEY, 			            XK_Return, 		spawn,          { .v = termcmd } },
 	{ MODKEY,						XK_o,	   		spawn,          { .v = scriptscmd } },
 	{ MODKEY,                       XK_grave,  		togglescratch,  { .v = scratchpadcmd } },

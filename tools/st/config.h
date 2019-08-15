@@ -5,8 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+// static char *font = "Terminus:pixelsize=16:antialias=true:autohint=true";
 static char *font = "SourceCodePro-Medium:pixelsize=16:antialias=true:autohint=true";
 // static char *font = "Mechanical:size=14:antialias=true:autohint=true";
+
 static int borderpx = 2;
 
 /*

@@ -15,11 +15,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 	" Themeing
 	Plugin 'vim-airline/vim-airline'
-	Plugin 'tomasiser/vim-code-dark'
-	Plugin 'ErichDonGubler/vim-sublime-monokai'
+	" Plugin 'tomasiser/vim-code-dark'
+	" Plugin 'ErichDonGubler/vim-sublime-monokai'
 	" Plugin 'yous/vim-open-color'
-	Plugin 'chriskempson/vim-tomorrow-theme'
-	Plugin 'altercation/vim-colors-solarized'
+	" Plugin 'chriskempson/vim-tomorrow-theme'
+	" Plugin 'altercation/vim-colors-solarized'
 	Plugin 'dylanaraps/wal.vim'
 	Plugin 'edkolev/tmuxline.vim'
 
@@ -27,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 	" Plugin 'dart-lang/dart-vim-plugin'
 	Plugin 'vim-scripts/indentpython.vim'
 	" Plugin 'xuhdev/vim-latex-live-preview'
+	Plugin 'phpactor/phpactor'
 
 	Plugin 'Valloric/YouCompleteMe'
 	" Plugin 'vim-syntastic/syntastic'
@@ -51,7 +52,7 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'neoclide/coc-python'
 
 	" Emmet
-	Plugin 'mattn/emmet-vim'
+	" Plugin 'mattn/emmet-vim'
 
 	" Docker
 	Plugin 'kevinhui/vim-docker-tools'
@@ -150,7 +151,7 @@ syntax on
 " Tmuxline Conf
 	let g:tmuxline_preset = {
 		\'a': '#S',
-		\'b': ['#h', '#(whoami)', '#(uptime | cut -d" " -f 4 | tr -d ",")'],
+		\'b': ['#h', '#(whoami)', '#(uptime -p)'],
 		\'win': ['#I', '#W'],
 		\'cwin': ['#I', '#W'],
 		\'y': ['#(free --si -h | awk ''/Mem:/ { print $3 }'')', '#(acpi | awk -F "[ ,]" ''{ print $5 " " $7 }'')', '#(date "+%d %b %Y")'],

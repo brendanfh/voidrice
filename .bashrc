@@ -32,6 +32,7 @@ export PATH="/home/brendan/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts/utils:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 source $HOME/.shortcuts
 
 # Program aliases
@@ -76,6 +77,15 @@ zf() {
 		<(find "$HOME/Dropbox/docs" -name '*.ps') \
 		| fzf \
 		| xargs -r zathura ;
+}
+
+t() {
+	[ "${TERM:-none}" != "linux" ] && return 0
+
+	scr="$(ls $HOME/.scripts/tty | fzf --height=8)"
+	[ -z "$scr" ] && return 0
+
+	$HOME/.scripts/tty/$scr
 }
 
 # Load wal colors to be used by some scripts
