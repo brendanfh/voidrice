@@ -88,9 +88,9 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 // unsigned int alpha = 0x44;
 // unsigned int alpha = 0xcc;
-// unsigned int alpha = 0xdd;
+unsigned int alpha = 0xdd;
 // unsigned int alpha = 0xee;
-unsigned int alpha = 0xff;
+// unsigned int alpha = 0xff;
 
 static const char *colorname[] = {
 

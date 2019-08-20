@@ -101,6 +101,7 @@ static const char *dmenucmd[] = {
 static const char *termcmd[]  = { "st", NULL };
 static const char *tmuxcmd[]  = { "/home/brendan/.scripts/utils/tmux_launch", NULL };
 static const char *scriptscmd[] = { "/home/brendan/.scripts/scripts", NULL };
+static const char *powercmd[] = { "/home/brendan/.scripts/utils/power", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *notepadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "vim", "/home/brendan/.notes", NULL };
@@ -128,6 +129,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          { .v = tmuxcmd } },
 	{ MODKEY, 			            XK_Return, 		spawn,          { .v = termcmd } },
 	{ MODKEY,						XK_o,	   		spawn,          { .v = scriptscmd } },
+	{ MODKEY,						XK_p,	   		spawn,          { .v = powercmd } },
 	{ MODKEY,                       XK_grave,  		togglescratch,  { .v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_grave,  		togglescratch,  { .v = notepadcmd } },
 	{ MODKEY|ShiftMask,				XK_z,	   		spawn,		    { .v = laptopcmd } },
@@ -156,7 +158,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
 //  { MODKEY,                       XK_h,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY,                       XK_p,      setlayout,      {0} },
+	// { MODKEY,                       XK_p,      setlayout,      {0} },
 
 	// STACK MODIFY
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },

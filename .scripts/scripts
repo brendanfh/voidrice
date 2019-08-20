@@ -3,4 +3,4 @@
 sname=$(ls -al ~/.scripts/tools | awk '/^-rwx/ {print $9}' | dmenu -l 10 -p "Run script: ")
 [ -z "$sname" ] && exit 1
 
-~/.scripts/tools/"$sname"
+"$HOME/.scripts/tools/$sname"

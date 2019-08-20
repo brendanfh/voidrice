@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+case "$(echo -en 'Sleep\nReboot\nShutdown' | dmenu -p "Power options: ")" in
+	"Sleep")
+		sudo zzz
+		;;
+	"Reboot")
+		sudo reboot
+		;;
+	"Shutdown")
+		sudo halt
+		;;
+esac
