@@ -28,6 +28,8 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'vim-scripts/indentpython.vim'
 	" Plugin 'xuhdev/vim-latex-live-preview'
 	Plugin 'phpactor/phpactor'
+	Plugin 'leafo/moonscript-vim'
+	Plugin 'kchmck/vim-coffee-script'
 
 	Plugin 'Valloric/YouCompleteMe'
 	" Plugin 'vim-syntastic/syntastic'
@@ -90,6 +92,10 @@ syntax on
 	nmap <C-j> <C-w>j
 	nmap <C-k> <C-w>k
 	nmap <C-l> <C-w>l
+
+" Tab moving
+	nmap <C-n> :tabprev<CR>
+	nmap <C-m> :tabnext<CR>
 
 " Shortcuts
 	nnoremap <leader>n :NERDTreeToggle<CR>
@@ -157,3 +163,35 @@ syntax on
 		\'y': ['#(free --si -h | awk ''/Mem:/ { print $3 }'')', '#(acpi | awk -F "[ ,]" ''{ print $5 " " $7 }'')', '#(date "+%d %b %Y")'],
 		\'z': '#(date "+%H:%M")' }
 
+" Phpactor conf
+	autocmd FileType php setlocal omnifunc=phpactor#Complete
+
+	" Include use statement
+	autocmd FileType php nmap <Leader>u :call phpactor#UseAdd()<CR>
+
+	" Invoke the context menu
+	autocmd FileType php nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+
+	" Invoke the navigation menu
+	autocmd FileType php nmap <Leader>nn :call phpactor#Navigate()<CR>
+
+	" Goto definition of class or class member under the cursor
+	autocmd FileType php nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+
+	" Show brief information about the symbol under the cursor
+	autocmd FileType php nmap <Leader>K :call phpactor#Hover()<CR>
+
+	" Transform the classes in the current file
+	autocmd FileType php nmap <Leader>tt :call phpactor#Transform()<CR>
+
+	" Generate a new class (replacing the current file)
+	autocmd FileType php nmap <Leader>cc :call phpactor#ClassNew()<CR>
+
+	" Extract expression (normal mode)
+	autocmd FileType php nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
+
+	" Extract expression from selection
+	autocmd FileType php vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+
+	" Extract method from selection
+	autocmd FileType php vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>

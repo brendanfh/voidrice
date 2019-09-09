@@ -7,11 +7,11 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int ulpad				= 8; 		/* underline padding */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 0;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
-static const char *fonts[]          = { "SourceCodePro-Medium:bold:size=14", "monospace:size=10" };
+static const char *fonts[]          = { "SourceCodePro-Medium:bold:size=10", "monospace:size=10" };
 static const char dmenufont[]       = "SourceCodePro-Medium:bold:size=14";
 
 static char normbordercolor[] = "#444444";
@@ -34,9 +34,6 @@ static const char *colors[][3]      = {
 	[SchemeWarn]   = { warnfgcolor,   warnbgcolor,   warnbordercolor   },
 	[SchemeUrgent] = { urgentfgcolor, urgentbgcolor, urgentbordercolor },
 };
-
-/* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -116,6 +113,21 @@ static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
 static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
 static const char *lockcmd[] = { "/home/brendan/.scripts/tools/lock", NULL };
 
+/* tagging */
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *apps[][9] = {
+	{ "code-oss", NULL },
+	{ "chromium", NULL },
+	{ "st", NULL },
+	{ "st", "-e", "/home/brendan/.config/vifm/scripts/vifmrun", NULL },
+	{ "st", "-e", "calcurse", NULL },
+	{ "Discord", NULL },
+	{ "slack", NULL },
+	{ "chromium", "https://reddit.com", NULL },
+	{ "spotify", NULL }
+};
+
+
 #define APP(cmd) { .v = (const char*[]) { cmd, NULL } }
 #define TERM(cmd) { .v = (const char*[]) { "st", "-e", cmd, NULL } }
 
@@ -142,6 +154,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F8,     		spawn,			TERM("/home/brendan/.config/vifm/scripts/vifmrun") },
 	{ MODKEY,                       XK_F9,     		spawn,			TERM("ncpamixer") },
 	{ MODKEY,                       XK_F10,    		spawn,			TERM("htop") },
+	{ MODKEY|ControlMask,			XK_Return,		launchappquick,	{ 0 } },
 
 	// MOVEMENT
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -165,7 +178,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+//  { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY|ControlMask, 			XK_j,      pushdown,       {0} },
 	{ MODKEY|ControlMask,           XK_k,      pushup,         {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -216,6 +229,7 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
+	{ ClkTagBar,            0,              Button2,        launchapp,      {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },

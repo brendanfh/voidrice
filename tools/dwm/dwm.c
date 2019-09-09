@@ -222,6 +222,8 @@ static void grabkeys(void);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
+static void launchapp(const Arg *arg);
+static void launchappquick(const Arg *arg);
 static void loadxrdb(void);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
@@ -1228,6 +1230,38 @@ killclient(const Arg *arg)
 		XSetErrorHandler(xerror);
 		XUngrabServer(dpy);
 	}
+}
+
+static void
+launchapp(const Arg *arg)
+{
+	int i, tmp = arg->ui;
+	for (i = 0; i < 9; i++) {
+		if (tmp == 1)
+			break;
+		tmp >>= 1;
+	}
+
+	const Arg tmparg = { .v = apps[i] };
+	spawn(&tmparg);
+
+	return;
+}
+
+static void
+launchappquick(const Arg *arg)
+{
+	int i, tmp = selmon->tagset[selmon->seltags];
+	for (i = 0; i < 9; i++) {
+		if ((tmp & 1) == 1)
+			break;
+		tmp >>= 1;
+	}
+
+	const Arg tmparg = { .v = apps[i] };
+	spawn(&tmparg);
+
+	return;
 }
 
 void

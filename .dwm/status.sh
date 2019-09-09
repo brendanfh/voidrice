@@ -63,12 +63,17 @@ battery() {
 	echo " ${battery_icon} ${battery_perc}% ${battery_color}"
 }
 
+calendar() {
+	echo -n ' '
+	calcurse -Q --days 1 | grep -e '->' | wc -l
+}
+
 datetime() {
 	date '+ %a %b %d \x03  %H:%M'
 }
 
 update() {
-	stat="$(volume) $(temp)   $(cpu) \x02  $(memory) \x03 $(battery) $(datetime)\x02"
+	stat="$(volume) $(temp)   $(cpu) \x02  $(memory) \x03 $(battery) $(datetime)\x02 $(calendar)\x03"
 	# Use the bash echo
 	xsetroot -name "$(/bin/echo -en "$stat")"
 }

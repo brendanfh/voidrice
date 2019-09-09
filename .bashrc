@@ -33,6 +33,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.scripts/utils:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.luarocks/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 source $HOME/.shortcuts
 
 # Program aliases
