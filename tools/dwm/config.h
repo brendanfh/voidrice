@@ -11,8 +11,8 @@ static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 0;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
-static const char *fonts[]          = { "SourceCodePro-Medium:bold:size=10", "monospace:size=10" };
-static const char dmenufont[]       = "SourceCodePro-Medium:bold:size=14";
+static const char *fonts[]          = { "FiraCode-Regular:bold:size=12", "monospace:size=12" };
+static const char dmenufont[]       = "FiraCode-Regular:bold:size=12";
 
 static char normbordercolor[] = "#444444";
 static char normbgcolor[]     = "#222222";
@@ -95,13 +95,15 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-static const char *termcmd[]  = { "st", NULL };
+#define TERMINAL "st"
+
+static const char *termcmd[]  = { TERMINAL, NULL };
 static const char *tmuxcmd[]  = { "/home/brendan/.scripts/utils/tmux_launch", NULL };
 static const char *scriptscmd[] = { "/home/brendan/.scripts/scripts", NULL };
 static const char *powercmd[] = { "/home/brendan/.scripts/utils/power", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *notepadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "vim", "/home/brendan/.notes", NULL };
+static const char *scratchpadcmd[] = { TERMINAL, "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *notepadcmd[] = { TERMINAL, "-t", scratchpadname, "-g", "120x34", "-e", "vim", "/home/brendan/.notes", NULL };
 
 static const char *downvolcmd[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%" };
 static const char *mutecmd[] 	= { "/usr/bin/pactl", "set-sink-mute", 	 "0", "toggle" };
@@ -113,14 +115,16 @@ static const char *brightdowncmd[] = { "/bin/xbacklight", "-5%", NULL };
 static const char *laptopcmd[]  = { "/home/brendan/.screenlayout/laptop.sh", NULL };
 static const char *lockcmd[] = { "/home/brendan/.scripts/tools/lock", NULL };
 
+static const char *emacscmd[] = { "emacs", NULL };
+
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 static const char *apps[][9] = {
 	{ "code-oss", NULL },
 	{ "chromium", NULL },
-	{ "st", NULL },
-	{ "st", "-e", "/home/brendan/.config/vifm/scripts/vifmrun", NULL },
-	{ "st", "-e", "calcurse", NULL },
+	{ TERMINAL, NULL },
+	{ TERMINAL, "-e", "/home/brendan/.config/vifm/scripts/vifmrun", NULL },
+	{ TERMINAL, "-e", "calcurse", NULL },
 	{ "Discord", NULL },
 	{ "slack", NULL },
 	{ "chromium", "https://reddit.com", NULL },
@@ -146,6 +150,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_grave,  		togglescratch,  { .v = notepadcmd } },
 	{ MODKEY|ShiftMask,				XK_z,	   		spawn,		    { .v = laptopcmd } },
 	{ MODKEY,						XK_semicolon,	spawn,		    { .v = lockcmd } },
+	{ MODKEY,						XK_e,			spawn, 			{ .v = emacscmd } },
 	{ MODKEY,                       XK_F1,     		spawn,          APP("chromium") },
 	{ MODKEY,                       XK_F2,     		spawn,          APP("spotify") },
 	{ MODKEY,                       XK_F3,     		spawn,          APP("Discord") },

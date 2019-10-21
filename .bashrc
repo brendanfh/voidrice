@@ -19,46 +19,7 @@ set -o vi
 
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
-# Various global settings
-export EDITOR='nvim'
-export BROWSER='firefox'
-export TERMINAL='st'
-
-# Path extensions
-#export PATH=~/.nimble/bin:$PATH
-#export PATH=~/tools/wabt/out/gcc/Release:$PATH
-export PATH="/home/brendan/.yarn/bin:$PATH"
-#export PATH=~/.pub-cache/bin:$PATH
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.scripts/utils:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-export PATH="$HOME/.luarocks/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-source $HOME/.shortcuts
-
-# Program aliases
-alias ls='ls --color=auto'
-alias l="ls -hN -al --group-directories-first"
-alias v="$EDITOR"
-alias r="ranger"
-alias f="$HOME/.config/vifm/scripts/vifmrun"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
-
-# Utility aliases
-alias cl="clear; ls -lh"
-alias md="mkdir -p"
-alias SS="sudo sv"
-alias xi="sudo xbps-install"
-alias xq="xbps-query -R -s"
-alias ccat="highlight --out-format=ansi"
-alias oof="sudo"
-
-# Tmux aliases
-alias ta="tmux a -t"
-alias tn="tmux new-session -s"
-alias tk="tmux kill-session -t"
-alias tl="tmux list-sessions"
+source "$HOME/.aliases"
 
 # Various program settings
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
@@ -97,4 +58,5 @@ t() {
 ufetch
 
 # Set PS1 for a pretty(er) terminal
-export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[34m\]\u\[$(tput sgr0)\]\[\033[37m\]@\[$(tput sgr0)\]\[\033[34m\]\h\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[31m\]\$?\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[32m\]\W\[$(tput sgr0)\]\[\033[37m\]]\[$(tput sgr0)\]\\n\\$\[$(tput sgr0)\] "
+# export PS1="\n\[$(tput bold)\][\[$(tput sgr0)\]\[\033[34m\]\u\[$(tput sgr0)\]\[\033[37m\]@\[$(tput sgr0)\]\[\033[34m\]\h\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[31m\]\$?\[$(tput sgr0)\]\[\033[37m\] \[$(tput sgr0)\]\[\033[32m\]\W\[$(tput sgr0)\]\[\033[37m\]]\[$(tput sgr0)\]\\n\\$\[$(tput sgr0)\] "
+export PS1="\n\[$(tput bold)\]{\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;14m\]\u@\h\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;15m\]}\[$(tput sgr0)\] {\[$(tput sgr0)\]\[\033[38;5;1m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\]} {\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]}\\n\\$\[$(tput sgr0)\] "

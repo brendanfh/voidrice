@@ -884,10 +884,10 @@ drawbar(Monitor *m)
 				break;
 			}
 			*text_s = '\0';
-			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_text(drw, m->ww - sw + tx, 0, sw - tx, bh, 0, text_p, 0);
+			//drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_setscheme(drw, scheme[(unsigned int) (char_tmp - 1)]);
-			drw_rect(drw, m->ww - sw + tx + ulpad, bh - 4, sw - tx - ulpad * 2, 4, 1, 1);
+			drw_text(drw, m->ww - sw + tx, 0, sw - tx, bh, 0, text_p, 0);
+			//drw_rect(drw, m->ww - sw + tx + ulpad, bh - 4, sw - tx - ulpad * 2, 4, 1, 1);
 			tx += TEXTW(text_p) - lrpad;
 			*text_s = char_tmp;
 			text_p = ++text_s;
@@ -903,17 +903,26 @@ drawbar(Monitor *m)
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
-		drw_setscheme(drw, scheme[SchemeNorm]);
+		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		if (occ & 1 << i)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
 				urg & 1 << i);
 
-		if (m->tagset[m->seltags] & 1 << i) {
-			drw_setscheme(drw, scheme[SchemeSel]);
-			drw_rect(drw, x + ulpad, bh - 4, w - ulpad * 2, 4, 1, 1);
-		}
+//		if (occ & 1 << i) {
+//			drw_setscheme(drw, scheme[SchemeNorm]);
+//			drw_rect(drw, x + ulpad, bh - 4, w - ulpad * 2, 4,
+//					m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
+//					urg & 1 << i);
+//		}
+//
+//		if (m->tagset[m->seltags] & 1 << i) {
+//			drw_setscheme(drw, scheme[SchemeSel]);
+//			drw_rect(drw, x + ulpad, bh - 4, w - ulpad * 2, 4,
+//					m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
+//					!(urg & 1 << i));
+//		}
 
 		x += w;
 	}
@@ -923,10 +932,9 @@ drawbar(Monitor *m)
 
 	if ((w = m->ww - sw - stw - x) > bh) {
 		if (m->sel) {
-			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_rect(drw, x + ulpad, bh - 4, w - ulpad * 2, 4, 1, 1);
+			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+			//drw_rect(drw, x + ulpad, bh - 4, w - ulpad * 2, 4, 1, 1);
 
 			if (m->sel->isfloating) {
 				drw_setscheme(drw, scheme[SchemeNorm]);

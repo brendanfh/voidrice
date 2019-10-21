@@ -1,6 +1,7 @@
 vrc      ~/.vimrc
 nrc		 ~/.config/nvim/init.vim
 brc 	 ~/.bashrc
+zrc		 ~/.zshrc
 tmc		 ~/.tmux.conf
 bmf		 ~/.bmfiles
 bmd		 ~/.bmdirs

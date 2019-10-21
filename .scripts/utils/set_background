@@ -6,6 +6,8 @@ light=""
 # Set the background
 wal $light -i "$1"
 
+./.config/berry/colors &
+
 # Update record of background
 echo "$1" > ~/.background
 

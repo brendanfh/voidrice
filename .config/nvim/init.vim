@@ -9,30 +9,29 @@ Plugin 'VundleVim/Vundle.vim'
 	" Useful utilities
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'vifm/vifm.vim'
-	" Plugin 'w0rp/ale'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'neoclide/coc.nvim'
 
+	" Auto complete
+	Plugin 'neomake/neomake'
+	Plugin 'Shougo/deoplete.nvim'
+	Plugin 'Shougo/deoplete-clangx'
+	Plugin 'deoplete-plugins/deoplete-jedi'
+	Plugin 'donRaphaco/neotex', { 'for': 'tex' }
+
 	" Themeing
 	Plugin 'vim-airline/vim-airline'
-	" Plugin 'tomasiser/vim-code-dark'
-	" Plugin 'ErichDonGubler/vim-sublime-monokai'
-	" Plugin 'yous/vim-open-color'
-	" Plugin 'chriskempson/vim-tomorrow-theme'
-	" Plugin 'altercation/vim-colors-solarized'
 	Plugin 'dylanaraps/wal.vim'
 	Plugin 'edkolev/tmuxline.vim'
 
-	" Plugin 'zah/nim.vim'
+	Plugin 'zah/nim.vim'
+	" Plugin 'alaviss/nim.nvim'
 	" Plugin 'dart-lang/dart-vim-plugin'
 	Plugin 'vim-scripts/indentpython.vim'
 	" Plugin 'xuhdev/vim-latex-live-preview'
-	Plugin 'phpactor/phpactor'
+	" Plugin 'phpactor/phpactor'
 	Plugin 'leafo/moonscript-vim'
 	Plugin 'kchmck/vim-coffee-script'
-
-	Plugin 'Valloric/YouCompleteMe'
-	" Plugin 'vim-syntastic/syntastic'
 
 	" Git additions
 	Plugin 'tpope/vim-fugitive'
@@ -45,9 +44,9 @@ Plugin 'VundleVim/Vundle.vim'
 	Plugin 'junegunn/goyo.vim'
 
 	" Typescript
-	Plugin 'Quramy/tsuquyomi'
-	Plugin 'leafgarland/typescript-vim'
-	Plugin 'ianks/vim-tsx'
+	" Plugin 'Quramy/tsuquyomi'
+	" Plugin 'leafgarland/typescript-vim'
+	" Plugin 'ianks/vim-tsx'
 	" Plugin 'neoclide/coc-tsserver'
 
 	" Python
@@ -58,6 +57,16 @@ Plugin 'VundleVim/Vundle.vim'
 
 	" Docker
 	Plugin 'kevinhui/vim-docker-tools'
+
+	" Note taking
+	Plugin 'xolox/vim-notes'
+	Plugin 'xolox/vim-misc'
+
+	" Floating Terminal
+	Plugin 'voldikss/vim-floaterm'
+
+	" NERDTree Git
+	Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 
 call vundle#end()
@@ -110,11 +119,22 @@ syntax on
 	autocmd BufRead,BufNewFile pl set syntax=prolog
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set syntax=groff
 
+" Deoplete and Neomake
+	let g:deoplete#enable_at_startup = 1
+	let g:neotex_delay = 1
+
+	call neomake#configure#automake('nrwi', 1)
+	let g:neomake_warning_sign = {
+	  \ 'text': '--',
+	  \ 'texthl': 'WarningMsg',
+	  \ }
+	let g:neomake_error_sign = {
+	  \ 'text': '>>',
+	  \ 'texthl': 'ErrorMsg',
+	  \ }
+
 " Ctrl-P ignore
 	let g:ctrl_p_custom_ignore = 'node_modules'
-
-" Remove thousands of errors in lua files
-	let g:ale_lua_luacheck_options = '--globals love'
 
 " Tex Settings
 	let g:Tex_MultipleCompileFormats = 'pdf'
@@ -148,12 +168,6 @@ syntax on
 	autocmd FileType nroff inoremap ,vec left [ pile {<Enter>  <++> above<Enter><++><Enter><Esc><<i} right ]<Esc>kk0i
 	autocmd FileType nroff inoremap ,mat left [ matrix {<Enter>  ccol { <++> above <++> }<Enter>ccol { <++> above <++> }<Enter><Esc><<i} right ]<Esc>kk0i
 
-" Coc extensions
-	" CocInstall coc-tsserver
-
-" YCM
-	let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
 " Tmuxline Conf
 	let g:tmuxline_preset = {
 		\'a': '#S',
@@ -163,35 +177,52 @@ syntax on
 		\'y': ['#(free --si -h | awk ''/Mem:/ { print $3 }'')', '#(acpi | awk -F "[ ,]" ''{ print $5 " " $7 }'')', '#(date "+%d %b %Y")'],
 		\'z': '#(date "+%H:%M")' }
 
-" Phpactor conf
-	autocmd FileType php setlocal omnifunc=phpactor#Complete
+	let s:previousMode = ""
+	let s:tmuxenv = $TMUX
+    let s:tmux = 0
+    if (s:tmuxenv != "")
+        let s:tmux = 1
+    endif
+    function! ChangeTmuxline()
+        if s:tmux == 1
+            let currentMode=mode()
+            if s:previousMode != currentMode
+                if currentMode == "i" || currentMode == "ic" || currentMode == "ix" || currentMode == "R" || currentMode == "Rx" || currentMode == "Rc" || currentMode == "Rv"
+                    :Tmuxline airline_insert
+                elseif currentMode == "n" || currentMode == "niR" || currentMode == "niI" || currentMode == "niV" || currentMode == "no" || currentMode == "nov" || currentMode == "noV" || currentMode == "noCTRL-V" || currentMode == "c" || currentMode == "ce" || currentMode == "cv" || currentMode == "r" || currentMode == "rm" || currentMode == "r?" || currentMode == "!" || currentMode == "t"
+                    :Tmuxline airline
+                elseif currentMode == "v" || currentMode == "V" || currentMode == "CTRL-V" || currentMode == "s" || currentMode == "S" || currentMode == "CTRL-S"
+                    :Tmuxline airline_visual
+                endif
+                let s:previousMode=currentMode
+            endif
+        endif
+        return ""
+	endfunction
 
-	" Include use statement
-	autocmd FileType php nmap <Leader>u :call phpactor#UseAdd()<CR>
+	let g:airline_section_z = '%{ChangeTmuxline()} %p%% %l:%c '
 
-	" Invoke the context menu
-	autocmd FileType php nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+" Emacs like key bindings
+	nmap <Space>wh <C-w>h
+	nmap <Space>wl <C-w>l
+	nmap <Space>wj <C-w>j
+	nmap <Space>wk <C-w>k
 
-	" Invoke the navigation menu
-	autocmd FileType php nmap <Leader>nn :call phpactor#Navigate()<CR>
+	nmap <Space>w[ <C-w><
+	nmap <Space>w] <C-w>>
+	nmap <Space>w{ <C-w>+
+	nmap <Space>w} <C-w>-
 
-	" Goto definition of class or class member under the cursor
-	autocmd FileType php nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+	nmap <Space>wv :vnew<CR>
+	nmap <Space>ws :new<CR>
+	nmap <Space>wd :q<CR>
 
-	" Show brief information about the symbol under the cursor
-	autocmd FileType php nmap <Leader>K :call phpactor#Hover()<CR>
+	nmap <Space>bb :buffers<CR>:buffer<Space>
+	nmap <Space>bn :enew<CR>
 
-	" Transform the classes in the current file
-	autocmd FileType php nmap <Leader>tt :call phpactor#Transform()<CR>
-
-	" Generate a new class (replacing the current file)
-	autocmd FileType php nmap <Leader>cc :call phpactor#ClassNew()<CR>
-
-	" Extract expression (normal mode)
-	autocmd FileType php nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
-
-	" Extract expression from selection
-	autocmd FileType php vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
-
-	" Extract method from selection
-	autocmd FileType php vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+" Floating Term
+	noremap <silent> <F12> :FloatermToggle<CR>i
+	noremap! <silent> <F12> <Esc>:FloatermToggle<CR>i
+	tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
+	let g:floaterm_background = "#000000"
+	let g:floaterm_position = 'center'

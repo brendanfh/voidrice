@@ -6,8 +6,9 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // static char *font = "Terminus:pixelsize=16:antialias=true:autohint=true";
-static char *font = "SourceCodePro-Medium:pixelsize=16:antialias=true:autohint=true";
+// static char *font = "SourceCodePro-Medium:pixelsize=16:antialias=true:autohint=true";
 // static char *font = "Mechanical:size=14:antialias=true:autohint=true";
+static char *font = "FiraCode-Regular:pixelsize=16:antialias=true";
 
 static int borderpx = 2;
 
@@ -88,8 +89,8 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 // unsigned int alpha = 0x44;
 // unsigned int alpha = 0xcc;
-unsigned int alpha = 0xdd;
-// unsigned int alpha = 0xee;
+// unsigned int alpha = 0xdd;
+unsigned int alpha = 0xee;
 // unsigned int alpha = 0xff;
 
 static const char *colorname[] = {

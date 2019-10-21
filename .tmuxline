@@ -1,5 +1,5 @@
 # This tmux statusbar config was created by tmuxline.vim
-# on Wed, 07 Aug 2019
+# on Mon, 21 Oct 2019
 
 set -g status-justify "centre"
 set -g status "on"

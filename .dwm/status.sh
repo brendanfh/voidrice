@@ -7,18 +7,18 @@ volume() {
 	volicon=""
 	volcol="\x02"
 	[ "$volstat" = "muted" ] && volicon="" && volcol="\x04"
-	echo "  $volicon $volstat $volcol"
+	echo " $volicon $volstat $volcol"
 }
 
 temp() {
 	tempcolor="\x03"
-	temp="$(sensors -u | awk -F'[ :.]' '/temp2_input/ { print $5 }')"
+	temp="$(sensors -u -j 2>/dev/null | jq '.["coretemp-isa-0000"]["Core 0"]["temp2_input"]' | cut -d. -f1)"
 
 	if [ "$temp" -ge "60" ] ; then
 		tempcolor="\x04" ;
 	fi
 
-	echo "  $temp°C $tempcolor"
+	echo " $temp°C $tempcolor"
 }
 
 cpu() {
@@ -60,7 +60,7 @@ battery() {
 
 	$(echo "$acpiout" | grep -qi " charging") && battery_color='\x01'
 
-	echo " ${battery_icon} ${battery_perc}% ${battery_color}"
+	echo "${battery_icon} ${battery_perc}% ${battery_color}"
 }
 
 calendar() {
@@ -69,17 +69,16 @@ calendar() {
 }
 
 datetime() {
-	date '+ %a %b %d \x03  %H:%M'
+	date '+ %a %b %d \x03  %H:%M '
 }
 
 update() {
 	stat="$(volume) $(temp)   $(cpu) \x02  $(memory) \x03 $(battery) $(datetime)\x02 $(calendar)\x03"
-	# Use the bash echo
 	xsetroot -name "$(/bin/echo -en "$stat")"
 }
 
 while true; do
 	update ;
-	sleep 2s &
+	sleep 3s &
 	wait
 done

@@ -2,12 +2,16 @@
 
 shell_shortcuts="$HOME/.shortcuts"
 ranger_shortcuts="$HOME/.config/ranger/shortcuts.conf"
+lf_shortcuts="$HOME/.config/lf/lfrc"
 
 rm -f "$ranger_shortcuts" 2>/dev/null
+rm -f "$lf_shortcuts" 2>/dev/null
 printf "# vim: filetype=sh\\nalias " > "$shell_shortcuts"
 
 tee >(awk '{print $1"=\"cd "$2" && ls -a\" \\"}' >> "$shell_shortcuts") < "$HOME"/.bmdirs \
-    | awk '{print "map g"$1" cd "$2"\n"}' >> "$ranger_shortcuts"
+    | awk '{print "map g"$1" cd "$2"\n"}' >> "$ranger_shortcuts" \
+    | awk '{print "map g"$1" cd "$2"\n"}' >> "$lf_shortcuts"
 
 tee >(awk '{print $1"=\"$EDITOR "$2"\" \\"}' >> "$shell_shortcuts") < "$HOME"/.bmfiles \
-    | awk '{print "map "$1" shell $EDITOR "$2}' >> "$ranger_shortcuts"
+    | awk '{print "map "$1" shell $EDITOR "$2}' >> "$ranger_shortcuts" \
+    | awk '{print "map g"$1" cd "$2"\n"}' >> "$lf_shortcuts"

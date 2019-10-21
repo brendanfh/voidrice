@@ -1,0 +1,32 @@
+export EDITOR='nvim'
+export BROWSER='firefox'
+export TERMINAL='st'
+
+# Path extensions
+#export PATH=~/.nimble/bin:$PATH
+#export PATH=~/tools/wabt/out/gcc/Release:$PATH
+export PATH="/home/brendan/.yarn/bin:$PATH"
+#export PATH=~/.pub-cache/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.scripts/utils:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.luarocks/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+source $HOME/.shortcuts
+
+alias ls='ls --color=auto'
+alias l="ls -hN -al --group-directories-first"
+alias v="$EDITOR"
+alias r="ranger"
+alias f="$HOME/.config/vifm/scripts/vifmrun"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_git/ --work-tree=$HOME'
+
+# Utility aliases
+alias cl="clear; ls -lh"
+alias md="mkdir -p"
+alias SS="sudo sv"
+alias xi="sudo xbps-install"
+alias xq="xbps-query -R -s"
+alias ccat="highlight --out-format=ansi"
+alias oof="sudo"

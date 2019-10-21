@@ -14,7 +14,8 @@ Maps() {
 }
 
 QRCode() {
-	qrencode "$@" -s 10 -o /tmp/qr.png && sxiv /tmp/qr.png ;	
+	# qrencode "$@" -s 10 -o /tmp/qr.png && sxiv /tmp/qr.png ;
+	notify-send "QRCode for $@" "$(curl "qrenco.de/$@")"
 }
 
 cmd="$(declare -F | awk '{print $3}' | dmenu -p "$sel selected: " -l 5)"
