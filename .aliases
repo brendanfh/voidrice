@@ -1,6 +1,11 @@
 export EDITOR='nvim'
 export BROWSER='firefox'
-export TERMINAL='st'
+export TERMINAL='kitty'
+
+export PROJECTOR_PROJECT_FILE='~/.projects'
+export PROJECTOR_PROJECTS='~/dev'
+export PROJECTOR_GITHUB_USERNAME='brendanfh'
+export PROJECTOR_TMUX='tmux'
 
 # Path extensions
 #export PATH=~/.nimble/bin:$PATH

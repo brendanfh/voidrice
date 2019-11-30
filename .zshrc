@@ -36,7 +36,7 @@ vf() {
 zf() {
 	ls *.pdf \
 		| fzf \
-		| xargs -r zathura ;
+		| xargs -I{} -r zathura "{}";
 }
 
 t() {
@@ -57,7 +57,9 @@ rangercd() {
 		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
 	fi
 }
-bindkey -s '^p' 'rangercd\n'
+bindkey -s '^o' 'rangercd\n'
+
+bindkey -s '^p' 'python3 ~/tools/projector/projector.py\n'
 
 
 # Load wal colors to be used by some scripts
@@ -65,3 +67,5 @@ bindkey -s '^p' 'rangercd\n'
 
 # Print a nice display when the session starts
 ufetch
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

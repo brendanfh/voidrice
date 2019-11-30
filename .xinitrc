@@ -16,9 +16,6 @@ fi
 # xmodmap "keycode 66 = Escape NoSymbol Escape"
 # setxkbmap -option caps:swapescape
 
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
 exec dwm
 # exec berry
+# exec sowm

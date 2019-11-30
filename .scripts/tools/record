@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 pgrep ffmpeg && exit 1
 
 choices="Exit
 0 0 1920 1080
+0 0 3840 1080
 1920 0 1920 1080
 3840 0 1920 1080"
 
@@ -12,7 +13,7 @@ output_choices="/home/brendan/out.mkv
 
 ch="$(echo "$choices" | dmenu -i -l 5 -p "Record size: ")"
 [ -z "$ch" ] && exit 1
-[ "$ch" == "Exit" ] && exit 1
+[ "$ch" = "Exit" ] && exit 1
 
 output="$(echo "$output_choices" | dmenu -i -l 5 -p "Output location: ")"
 [ -z "$output" ] && exit 1
@@ -23,8 +24,25 @@ rec() {
 		pre="st -e "
 	fi
 
-	"$pre" ffmpeg -framerate 1 -f x11grab -s "$3","$4" -i :0.0+"$1","$2" -vf settb=\(1/30\),setpts=N/TB/30 -r 30 -vcodec libx264 -crf 0 -preset ultrafast -threads 0 "$5" && notify-send "Recording"
+	echo "pre: $pre"
+	echo "1: $1"
+	echo "2: $2"
+	echo "3: $3"
+	echo "4: $4"
+	echo "5: $5"
+
+	$pre ffmpeg -framerate 1 \
+		-f x11grab \
+		-s "$3","$4" \
+		-i :0.0+"$1","$2" \
+		-vf settb=\(1/30\),setpts=N/TB/30 \
+		-r 30 \
+		-vcodec libx264 \
+		-crf 0 \
+		-preset ultrafast \
+		-threads 0 \
+		"$5" && notify-send "Recording to $5"
 }
 
-rec "$ch" "$output"
+rec $ch "$output"
 
